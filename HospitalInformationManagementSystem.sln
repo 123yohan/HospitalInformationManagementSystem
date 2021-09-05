@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.PL", "HMS.PL\HMS.PL.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Entity", "HMS.Entity\HMS.Entity.csproj", "{53B46231-3070-4C11-B577-E7A10BFF7293}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HMS.Other", "HMS.Other\HMS.Other.csproj", "{BB144531-FDB6-4715-960F-CC00A78F93B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{53B46231-3070-4C11-B577-E7A10BFF7293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{53B46231-3070-4C11-B577-E7A10BFF7293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{53B46231-3070-4C11-B577-E7A10BFF7293}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB144531-FDB6-4715-960F-CC00A78F93B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB144531-FDB6-4715-960F-CC00A78F93B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB144531-FDB6-4715-960F-CC00A78F93B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB144531-FDB6-4715-960F-CC00A78F93B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
