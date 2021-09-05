@@ -9,7 +9,7 @@ using HMS.Other;
 
 namespace HMS.DAL
 {
-    class EmployeeDAL
+   public class EmployeeDAL
     {
         private static readonly UOVT_HIMSEntities _Con = new UOVT_HIMSEntities();
         static int Result = 0;
