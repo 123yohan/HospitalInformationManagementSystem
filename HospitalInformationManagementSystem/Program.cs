@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using HMS.Entity.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +18,9 @@ namespace HospitalInformationManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new HMS.PL.MasterForm());
+            Application.Run(new HMS.PL.btnExit());
+
+          
         }
     }
 }
