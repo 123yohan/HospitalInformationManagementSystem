@@ -22,6 +22,11 @@ namespace HMS.PL
             Application.Exit();
         }
 
-      
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            MasterForm MF = new MasterForm();
+            MF.Show();
+            this.Hide();
+        }
     }
 }
