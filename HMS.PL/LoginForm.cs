@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace HMS.PL
 {
-    public partial class LoginForm : Form
+    public partial class btnExit : Form
     {
-        public LoginForm()
+        public btnExit()
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+      
     }
 }
