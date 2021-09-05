@@ -111,19 +111,20 @@ namespace HMS.PL
             lbl_time.Text = DateTime.Now.ToShortTimeString();
         }
 
-        private void btnEmp_Click(object sender, EventArgs e)
+       
+        private void button1_Click(object sender, EventArgs e)
         {
-            //foreach (Form f in this.MdiChildren)
-            //{
-            //    if (f.GetType() == typeof(Invoice_Form))
-            //    {
-            //        f.Activate();
-            //        return;
-            //    }
-            //}
-            //Form frm = new Invoice_Form();
-            //frm.MdiParent = this;
-            //frm.Show();
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(EmployeePL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new EmployeePL();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }
