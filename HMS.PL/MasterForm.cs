@@ -82,5 +82,48 @@ namespace HMS.PL
                 childForm.Close();
             }
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void MasterForm_Load(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                // #2
+                MdiClient client = control as MdiClient;
+                if (!(client == null))
+                {
+                    // #3
+                    client.BackColor = Color.FromArgb(45, 45, 45);
+                    // 4#
+                    break;
+                }
+            }
+           
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            LBL_DATE.Text = DateTime.Now.ToShortDateString();
+            lbl_time.Text = DateTime.Now.ToShortTimeString();
+        }
+
+        private void btnEmp_Click(object sender, EventArgs e)
+        {
+            //foreach (Form f in this.MdiChildren)
+            //{
+            //    if (f.GetType() == typeof(Invoice_Form))
+            //    {
+            //        f.Activate();
+            //        return;
+            //    }
+            //}
+            //Form frm = new Invoice_Form();
+            //frm.MdiParent = this;
+            //frm.Show();
+        }
     }
 }
