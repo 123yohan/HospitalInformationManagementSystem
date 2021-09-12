@@ -43,11 +43,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeePL.cs">
+    <Compile Include="PatientAddPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmployeePL.Designer.cs">
-      <DependentUpon>EmployeePL.cs</DependentUpon>
+    <Compile Include="PatientAddPL.Designer.cs">
+      <DependentUpon>PatientAddPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDetailsPL.Designer.cs">
+      <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDetailsPL.Designer.cs">
+      <DependentUpon>StaffDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffPL.Designer.cs">
+      <DependentUpon>StaffPL.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -69,8 +87,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="EmployeePL.resx">
-      <DependentUpon>EmployeePL.cs</DependentUpon>
+    <EmbeddedResource Include="PatientAddPL.resx">
+      <DependentUpon>PatientAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetailsPL.resx">
+      <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDetailsPL.resx">
+      <DependentUpon>StaffDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffPL.resx">
+      <DependentUpon>StaffPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -98,6 +125,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-add-user-male-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-health-administration-hospital-information-system-altarama-information-systems-5b3ab466d00748.2032419715305739268521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-shield-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-business-building-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-handicapped-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hospital-3-45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

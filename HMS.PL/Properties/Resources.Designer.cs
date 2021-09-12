@@ -73,6 +73,16 @@ namespace HMS.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_male_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-male-40", resourceCulture);
@@ -86,6 +96,67 @@ namespace HMS.PL.Properties {
         internal static System.Drawing.Bitmap icons8_business_building_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-business-building-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_business_building_401 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-business-building-401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_cancel_20 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-cancel-20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_handicapped_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-handicapped-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_hospital_3_45 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-hospital-3-45", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_refresh_shield_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-refresh-shield-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_health_administration_hospital_information_system_altarama_information_systems_5b3ab466d00748_2032419715305739268521 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-health-administration-hospital-information-system-altarama-information-sy" +
+                        "stems-5b3ab466d00748.2032419715305739268521", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
