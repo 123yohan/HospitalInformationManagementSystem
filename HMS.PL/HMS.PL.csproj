@@ -43,6 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppoitmentPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppoitmentPL.Designer.cs">
+      <DependentUpon>AppoitmentPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintsAddPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintsAddPL.Designer.cs">
+      <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintsDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintsDetailsPL.Designer.cs">
+      <DependentUpon>ComplaintsDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageConfigPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageConfigPL.Designer.cs">
+      <DependentUpon>PageConfigPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientAddPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +111,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppoitmentPL.resx">
+      <DependentUpon>AppoitmentPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComplaintsAddPL.resx">
+      <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageConfigPL.resx">
+      <DependentUpon>PageConfigPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientAddPL.resx">
       <DependentUpon>PatientAddPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,6 +182,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-cancel-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-why-quest-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-keep-locked-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendar-plus-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-icons-avatar-user-login-avatar-thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supplier-40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
