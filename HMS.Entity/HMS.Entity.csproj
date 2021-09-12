@@ -65,6 +65,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HIMSDataModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\TblEmployee.cs">
+      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TblUserGroup.cs">
+      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\UserAccount.cs">
       <DependentUpon>HIMSDataModel.tt</DependentUpon>
     </Compile>

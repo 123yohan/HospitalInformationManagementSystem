@@ -26,5 +26,7 @@ namespace HMS.Entity.Models
         }
     
         public virtual DbSet<UserAccount> UserAccounts { get; set; }
+        public virtual DbSet<TblEmployee> TblEmployees { get; set; }
+        public virtual DbSet<TblUserGroup> TblUserGroups { get; set; }
     }
 }
