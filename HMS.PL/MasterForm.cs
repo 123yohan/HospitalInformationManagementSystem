@@ -116,13 +116,43 @@ namespace HMS.PL
         {
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(EmployeePL))
+                if (f.GetType() == typeof(StaffPL))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form frm = new EmployeePL();
+            Form frm = new StaffPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(StaffDetailsPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new StaffDetailsPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPatient_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PatientDetailsPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new PatientDetailsPL();
             frm.MdiParent = this;
             frm.Show();
         }

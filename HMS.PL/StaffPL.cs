@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HMS.PL
 {
-    public partial class EmployeePL : Form
+    public partial class StaffPL : Form
     {
-        public EmployeePL()
+        public StaffPL()
         {
             InitializeComponent();
         }

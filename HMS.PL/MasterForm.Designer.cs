@@ -32,6 +32,7 @@ namespace HMS.PL
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -41,16 +42,18 @@ namespace HMS.PL
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnStaff = new System.Windows.Forms.FlowLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnPatient = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            this.btnStaff.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -59,12 +62,20 @@ namespace HMS.PL
             this.panel1.Size = new System.Drawing.Size(999, 70);
             this.panel1.TabIndex = 2;
             // 
+            // label2
+            // 
+            this.label2.Image = global::HMS.PL.Properties.Resources.icons8_hospital_3_45;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 34);
+            this.label2.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(12, 14);
+            this.label1.Location = new System.Drawing.Point(59, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 26);
             this.label1.TabIndex = 3;
@@ -163,32 +174,49 @@ namespace HMS.PL
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // flowLayoutPanel2
+            // btnStaff
             // 
-            this.flowLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanel2.Controls.Add(this.button1);
-            this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 70);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(999, 94);
-            this.flowLayoutPanel2.TabIndex = 9;
+            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnStaff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnStaff.Controls.Add(this.button2);
+            this.btnStaff.Controls.Add(this.btnPatient);
+            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStaff.Location = new System.Drawing.Point(0, 70);
+            this.btnStaff.Name = "btnStaff";
+            this.btnStaff.Size = new System.Drawing.Size(999, 94);
+            this.btnStaff.TabIndex = 9;
             // 
-            // button1
+            // button2
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button1.Image = global::HMS.PL.Properties.Resources.icons8_add_user_male_40;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 77);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "EMPLOYEE";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button2.Image = global::HMS.PL.Properties.Resources.icons8_business_building_40;
+            this.button2.Location = new System.Drawing.Point(3, 3);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 77);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "STAFF";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnPatient
+            // 
+            this.btnPatient.FlatAppearance.BorderSize = 0;
+            this.btnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPatient.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPatient.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPatient.Image = global::HMS.PL.Properties.Resources.icons8_handicapped_40;
+            this.btnPatient.Location = new System.Drawing.Point(97, 3);
+            this.btnPatient.Name = "btnPatient";
+            this.btnPatient.Size = new System.Drawing.Size(88, 77);
+            this.btnPatient.TabIndex = 10;
+            this.btnPatient.Text = "PATIENT";
+            this.btnPatient.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPatient.UseVisualStyleBackColor = true;
+            this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
             // MasterForm
             // 
@@ -196,7 +224,7 @@ namespace HMS.PL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(999, 559);
-            this.Controls.Add(this.flowLayoutPanel2);
+            this.Controls.Add(this.btnStaff);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -209,7 +237,7 @@ namespace HMS.PL
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
+            this.btnStaff.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -225,8 +253,10 @@ namespace HMS.PL
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FlowLayoutPanel btnStaff;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnPatient;
+        private System.Windows.Forms.Label label2;
     }
 }
 
