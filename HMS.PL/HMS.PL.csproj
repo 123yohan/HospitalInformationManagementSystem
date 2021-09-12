@@ -43,6 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PatientAddPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientAddPL.Designer.cs">
+      <DependentUpon>PatientAddPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PatientDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientDetailsPL.Designer.cs">
+      <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffDetailsPL.Designer.cs">
+      <DependentUpon>StaffDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StaffPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffPL.Designer.cs">
+      <DependentUpon>StaffPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -55,14 +79,45 @@
     <Compile Include="MasterForm.Designer.cs">
       <DependentUpon>MasterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PatientPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PatientPL.Designer.cs">
+      <DependentUpon>PatientPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="PatientAddPL.resx">
+      <DependentUpon>PatientAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientDetailsPL.resx">
+      <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffDetailsPL.resx">
+      <DependentUpon>StaffDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffPL.resx">
+      <DependentUpon>StaffPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterForm.resx">
       <DependentUpon>MasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PatientPL.resx">
+      <DependentUpon>PatientPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +125,39 @@
       <Project>{d4ac407a-18d5-4f79-86f8-f87e489cfaa3}</Project>
       <Name>HMS.BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-business-building-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-user-male-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-health-administration-hospital-information-system-altarama-information-systems-5b3ab466d00748.2032419715305739268521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-24 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-refresh-shield-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-business-building-401.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-handicapped-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-hospital-3-45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-cancel-20.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
