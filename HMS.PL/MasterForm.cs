@@ -156,5 +156,51 @@ namespace HMS.PL
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnComplatine_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(ComplaintsAddPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new ComplaintsAddPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPc_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PageConfigPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new PageConfigPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bnappointment_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(AppoitmentPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new AppoitmentPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }
