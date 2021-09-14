@@ -149,6 +149,14 @@
       <Project>{d4ac407a-18d5-4f79-86f8-f87e489cfaa3}</Project>
       <Name>HMS.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HMS.Entity\HMS.Entity.csproj">
+      <Project>{191F9BF2-6D45-4FA6-AE6D-8F5CD57A451D}</Project>
+      <Name>HMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Other\HMS.Other.csproj">
+      <Project>{BB144531-FDB6-4715-960F-CC00A78F93B6}</Project>
+      <Name>HMS.Other</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close.png" />

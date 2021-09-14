@@ -202,5 +202,70 @@ namespace HMS.PL
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void aDDEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uSERACCOUNTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNVOICEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gRNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oTHERPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uSERACCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aDDBRANDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aDDITEMSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sTOCKREPORTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sALESREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gRNREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cUSTOMERREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

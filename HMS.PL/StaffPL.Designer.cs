@@ -32,20 +32,20 @@ namespace HMS.PL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StaffPL));
             this.btnExit = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtNic = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtConPassword = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtMobileNo = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -84,149 +84,170 @@ namespace HMS.PL
             this.label1.TabIndex = 4;
             this.label1.Text = "Staff Form";
             // 
-            // comboBox4
+            // cmbUserRole
             // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(621, 198);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(190, 23);
-            this.comboBox4.TabIndex = 33;
+            this.cmbUserRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.cmbUserRole.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbUserRole.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUserRole.ForeColor = System.Drawing.Color.White;
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Location = new System.Drawing.Point(621, 198);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.Size = new System.Drawing.Size(190, 23);
+            this.cmbUserRole.TabIndex = 33;
             // 
-            // comboBox3
+            // cmbUserType
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(428, 198);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(190, 23);
-            this.comboBox3.TabIndex = 32;
+            this.cmbUserType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.cmbUserType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbUserType.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUserType.ForeColor = System.Drawing.Color.White;
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Items.AddRange(new object[] {
+            "Doctor",
+            "Nures"});
+            this.cmbUserType.Location = new System.Drawing.Point(428, 198);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(190, 23);
+            this.cmbUserType.TabIndex = 32;
             // 
-            // comboBox2
+            // cmbGender
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.comboBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(220, 198);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(193, 23);
-            this.comboBox2.TabIndex = 31;
+            this.cmbGender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.cmbGender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbGender.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGender.ForeColor = System.Drawing.Color.White;
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.cmbGender.Location = new System.Drawing.Point(220, 198);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(193, 23);
+            this.cmbGender.TabIndex = 31;
             // 
-            // textBox4
+            // txtNic
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(30, 199);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(184, 23);
-            this.textBox4.TabIndex = 29;
+            this.txtNic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtNic.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNic.ForeColor = System.Drawing.Color.White;
+            this.txtNic.Location = new System.Drawing.Point(30, 199);
+            this.txtNic.Name = "txtNic";
+            this.txtNic.Size = new System.Drawing.Size(184, 23);
+            this.txtNic.TabIndex = 29;
             // 
-            // textBox6
+            // txtEmail
             // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox6.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(428, 154);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(383, 23);
-            this.textBox6.TabIndex = 28;
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtEmail.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(428, 154);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(383, 23);
+            this.txtEmail.TabIndex = 28;
             // 
-            // textBox9
+            // txtConPassword
             // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox9.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(621, 244);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(190, 23);
-            this.textBox9.TabIndex = 27;
+            this.txtConPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtConPassword.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtConPassword.ForeColor = System.Drawing.Color.White;
+            this.txtConPassword.Location = new System.Drawing.Point(621, 244);
+            this.txtConPassword.Name = "txtConPassword";
+            this.txtConPassword.Size = new System.Drawing.Size(190, 23);
+            this.txtConPassword.TabIndex = 27;
+            this.txtConPassword.UseSystemPasswordChar = true;
             // 
-            // textBox8
+            // txtPassword
             // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox8.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(428, 244);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(190, 23);
-            this.textBox8.TabIndex = 26;
+            this.txtPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtPassword.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.ForeColor = System.Drawing.Color.White;
+            this.txtPassword.Location = new System.Drawing.Point(428, 244);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.Size = new System.Drawing.Size(190, 23);
+            this.txtPassword.TabIndex = 26;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
-            // textBox7
+            // txtUserName
             // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox7.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(30, 244);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(383, 23);
-            this.textBox7.TabIndex = 25;
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtUserName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.ForeColor = System.Drawing.Color.White;
+            this.txtUserName.Location = new System.Drawing.Point(30, 244);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(383, 23);
+            this.txtUserName.TabIndex = 25;
             // 
-            // textBox3
+            // txtMobileNo
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(30, 154);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(383, 23);
-            this.textBox3.TabIndex = 24;
+            this.txtMobileNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtMobileNo.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMobileNo.ForeColor = System.Drawing.Color.White;
+            this.txtMobileNo.Location = new System.Drawing.Point(30, 154);
+            this.txtMobileNo.Name = "txtMobileNo";
+            this.txtMobileNo.Size = new System.Drawing.Size(383, 23);
+            this.txtMobileNo.TabIndex = 24;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(30, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(781, 23);
-            this.textBox2.TabIndex = 23;
+            this.txtAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtAddress.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAddress.ForeColor = System.Drawing.Color.White;
+            this.txtAddress.Location = new System.Drawing.Point(30, 109);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(781, 23);
+            this.txtAddress.TabIndex = 23;
             // 
-            // textBox5
+            // txtLastName
             // 
-            this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(428, 64);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(383, 23);
-            this.textBox5.TabIndex = 22;
+            this.txtLastName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtLastName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLastName.ForeColor = System.Drawing.Color.White;
+            this.txtLastName.Location = new System.Drawing.Point(428, 64);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(383, 23);
+            this.txtLastName.TabIndex = 22;
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(30, 64);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(383, 23);
-            this.textBox1.TabIndex = 30;
+            this.txtFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtFirstName.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstName.ForeColor = System.Drawing.Color.White;
+            this.txtFirstName.Location = new System.Drawing.Point(30, 64);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(383, 23);
+            this.txtFirstName.TabIndex = 30;
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(562, 284);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 27);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "CLEAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnClear.FlatAppearance.BorderSize = 2;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(562, 284);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 27);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(694, 284);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 27);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "SUBMIT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSubmit.FlatAppearance.BorderSize = 2;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(694, 284);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(117, 27);
+            this.btnSubmit.TabIndex = 20;
+            this.btnSubmit.Text = "SUBMIT";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // label6
             // 
@@ -366,20 +387,20 @@ namespace HMS.PL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(840, 329);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cmbUserRole);
+            this.Controls.Add(this.cmbUserType);
+            this.Controls.Add(this.cmbGender);
+            this.Controls.Add(this.txtNic);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtConPassword);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtUserName);
+            this.Controls.Add(this.txtMobileNo);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtLastName);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -407,20 +428,20 @@ namespace HMS.PL
 
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cmbUserRole;
+        private System.Windows.Forms.ComboBox cmbUserType;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.TextBox txtNic;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtConPassword;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtMobileNo;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;

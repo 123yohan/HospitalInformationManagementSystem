@@ -8,5 +8,6 @@ namespace HMS.Other
 {
     public static class HMSComman
     {
+        public static int UserAccId;
     }
 }

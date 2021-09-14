@@ -25,8 +25,11 @@ namespace HMS.Entity.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Page> Pages { get; set; }
+        public virtual DbSet<Patient> Patients { get; set; }
+        public virtual DbSet<Staff> Staffs { get; set; }
         public virtual DbSet<UserAccount> UserAccounts { get; set; }
-        public virtual DbSet<TblEmployee> TblEmployees { get; set; }
-        public virtual DbSet<TblUserGroup> TblUserGroups { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<UserRoleAccessLevel> UserRoleAccessLevels { get; set; }
     }
 }
