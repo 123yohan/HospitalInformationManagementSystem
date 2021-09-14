@@ -12,14 +12,16 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserAccount
+    public partial class UserRoleAccessLevel
     {
-        public int UserId { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> UserRoleId { get; set; }
+        public Nullable<int> PageId { get; set; }
+        public Nullable<bool> AddCommand { get; set; }
+        public Nullable<bool> EditCommand { get; set; }
+        public Nullable<bool> DeleteCommand { get; set; }
+        public Nullable<bool> ReadCommand { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
-        public string Status { get; set; }
     }
 }
