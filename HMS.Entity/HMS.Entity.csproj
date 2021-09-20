@@ -50,6 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentManager.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Complaint.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HMSDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

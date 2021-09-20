@@ -33,18 +33,24 @@ namespace HMS.PL
             this.label1 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPatient = new System.Windows.Forms.TextBox();
             this.btnAddPaitent = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpAppoinmentTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpAppointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMedical = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.lstViewStaff = new System.Windows.Forms.ListView();
+            this.StaffId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstPatient = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -82,13 +88,16 @@ namespace HMS.PL
             this.label4.TabIndex = 13;
             this.label4.Text = "Patient Name";
             // 
-            // textBox3
+            // txtPatient
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox3.Location = new System.Drawing.Point(15, 78);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(529, 20);
-            this.textBox3.TabIndex = 18;
+            this.txtPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtPatient.ForeColor = System.Drawing.Color.White;
+            this.txtPatient.Location = new System.Drawing.Point(15, 78);
+            this.txtPatient.Name = "txtPatient";
+            this.txtPatient.Size = new System.Drawing.Size(529, 20);
+            this.txtPatient.TabIndex = 18;
+            this.txtPatient.TextChanged += new System.EventHandler(this.txtPatient_TextChanged);
+            this.txtPatient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPatient_KeyDown);
             // 
             // btnAddPaitent
             // 
@@ -128,19 +137,22 @@ namespace HMS.PL
             this.label3.TabIndex = 13;
             this.label3.Text = "Appointment Time";
             // 
-            // dateTimePicker1
+            // dtpAppoinmentTime
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(284, 245);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(260, 20);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dtpAppoinmentTime.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAppoinmentTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpAppoinmentTime.Location = new System.Drawing.Point(284, 245);
+            this.dtpAppoinmentTime.Name = "dtpAppoinmentTime";
+            this.dtpAppoinmentTime.Size = new System.Drawing.Size(260, 21);
+            this.dtpAppoinmentTime.TabIndex = 20;
             // 
-            // dateTimePicker2
+            // dtpAppointmentDate
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(15, 244);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(260, 20);
-            this.dateTimePicker2.TabIndex = 20;
+            this.dtpAppointmentDate.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpAppointmentDate.Location = new System.Drawing.Point(15, 244);
+            this.dtpAppointmentDate.Name = "dtpAppointmentDate";
+            this.dtpAppointmentDate.Size = new System.Drawing.Size(260, 21);
+            this.dtpAppointmentDate.TabIndex = 20;
             // 
             // label5
             // 
@@ -153,13 +165,16 @@ namespace HMS.PL
             this.label5.TabIndex = 13;
             this.label5.Text = "Medical Officer";
             // 
-            // textBox1
+            // txtMedical
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox1.Location = new System.Drawing.Point(15, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(529, 20);
-            this.textBox1.TabIndex = 18;
+            this.txtMedical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtMedical.ForeColor = System.Drawing.Color.White;
+            this.txtMedical.Location = new System.Drawing.Point(15, 133);
+            this.txtMedical.Name = "txtMedical";
+            this.txtMedical.Size = new System.Drawing.Size(529, 20);
+            this.txtMedical.TabIndex = 18;
+            this.txtMedical.TextChanged += new System.EventHandler(this.txtMedical_TextChanged);
+            this.txtMedical.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMedical_KeyDown);
             // 
             // label6
             // 
@@ -183,35 +198,99 @@ namespace HMS.PL
             this.label7.TabIndex = 13;
             this.label7.Text = "Status";
             // 
-            // button2
+            // btnClear
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(303, 280);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 27);
-            this.button2.TabIndex = 21;
-            this.button2.Text = "CLEAR";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnClear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnClear.FlatAppearance.BorderSize = 2;
+            this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClear.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.White;
+            this.btnClear.Location = new System.Drawing.Point(303, 280);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(117, 27);
+            this.btnClear.TabIndex = 21;
+            this.btnClear.Text = "CLEAR";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // button1
+            // btnSubmit
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(427, 280);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 27);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "SUBMIT";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSubmit.FlatAppearance.BorderSize = 2;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(427, 280);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(117, 27);
+            this.btnSubmit.TabIndex = 22;
+            this.btnSubmit.Text = "SUBMIT";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            // 
+            // lstViewStaff
+            // 
+            this.lstViewStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.lstViewStaff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.StaffId,
+            this.FirstName});
+            this.lstViewStaff.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstViewStaff.ForeColor = System.Drawing.Color.Silver;
+            this.lstViewStaff.FullRowSelect = true;
+            this.lstViewStaff.HideSelection = false;
+            this.lstViewStaff.Location = new System.Drawing.Point(15, 155);
+            this.lstViewStaff.Name = "lstViewStaff";
+            this.lstViewStaff.Size = new System.Drawing.Size(529, 110);
+            this.lstViewStaff.TabIndex = 23;
+            this.lstViewStaff.UseCompatibleStateImageBehavior = false;
+            this.lstViewStaff.View = System.Windows.Forms.View.Details;
+            this.lstViewStaff.Visible = false;
+            this.lstViewStaff.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstViewStaff_KeyDown);
+            // 
+            // StaffId
+            // 
+            this.StaffId.DisplayIndex = 1;
+            this.StaffId.Text = "ID";
+            this.StaffId.Width = 0;
+            // 
+            // FirstName
+            // 
+            this.FirstName.DisplayIndex = 0;
+            this.FirstName.Text = "Staff Name";
+            this.FirstName.Width = 400;
+            // 
+            // lstPatient
+            // 
+            this.lstPatient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.lstPatient.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.lstPatient.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lstPatient.ForeColor = System.Drawing.Color.Silver;
+            this.lstPatient.FullRowSelect = true;
+            this.lstPatient.HideSelection = false;
+            this.lstPatient.Location = new System.Drawing.Point(15, 99);
+            this.lstPatient.Name = "lstPatient";
+            this.lstPatient.Size = new System.Drawing.Size(529, 166);
+            this.lstPatient.TabIndex = 23;
+            this.lstPatient.UseCompatibleStateImageBehavior = false;
+            this.lstPatient.View = System.Windows.Forms.View.Details;
+            this.lstPatient.Visible = false;
+            this.lstPatient.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstPatient_KeyDown);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.DisplayIndex = 1;
+            this.columnHeader1.Text = "ID";
+            this.columnHeader1.Width = 0;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.DisplayIndex = 0;
+            this.columnHeader2.Text = "Patient Name";
+            this.columnHeader2.Width = 400;
             // 
             // AppoitmentPL
             // 
@@ -219,13 +298,15 @@ namespace HMS.PL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(560, 326);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lstPatient);
+            this.Controls.Add(this.lstViewStaff);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnSubmit);
+            this.Controls.Add(this.dtpAppointmentDate);
+            this.Controls.Add(this.dtpAppoinmentTime);
             this.Controls.Add(this.btnAddPaitent);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtMedical);
+            this.Controls.Add(this.txtPatient);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label7);
@@ -248,17 +329,23 @@ namespace HMS.PL
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPatient;
         private System.Windows.Forms.Button btnAddPaitent;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpAppoinmentTime;
+        private System.Windows.Forms.DateTimePicker dtpAppointmentDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMedical;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.ListView lstViewStaff;
+        private System.Windows.Forms.ColumnHeader StaffId;
+        private System.Windows.Forms.ColumnHeader FirstName;
+        private System.Windows.Forms.ListView lstPatient;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
