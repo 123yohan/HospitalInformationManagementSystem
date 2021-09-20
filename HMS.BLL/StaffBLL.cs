@@ -1,23 +1,22 @@
 ﻿using HMS.DAL;
+using HMS.Entity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Linq;
-using HMS.Entity.Models;
 
 namespace HMS.BLL
 {
-    class EmployeeBLL
+   public class StaffBLL
     {
-        public DataGridView GetEmployeee(DataGridView dgvEmployee)
+        public DataGridView GetStaffs(DataGridView dgvEmployee)
         {
             try
             {
-                dgvEmployee.DataSource = EmployeeDAL.GetEmployeee();
                 dgvEmployee.AutoGenerateColumns = false;
+                dgvEmployee.DataSource = StaffDAL.GetStaffs();
                 return dgvEmployee;
 
             }
@@ -32,9 +31,9 @@ namespace HMS.BLL
         {
             try
             {
-                cmbUserGroup.DataSource = EmployeeDAL.GetUserGroup();
+                cmbUserGroup.DataSource = StaffDAL.GetUserGroup();
                 cmbUserGroup.DisplayMember = "Name";
-                cmbUserGroup.ValueMember = "UserGroupId";
+                cmbUserGroup.ValueMember = "RoleId";
                 return cmbUserGroup;
 
             }
@@ -45,11 +44,11 @@ namespace HMS.BLL
             }
         }
 
-        public int AddEmployee(TblEmployee tblEmployee)
+        public int AddStaff(Staff staff, UserAccount userAccount)
         {
             try
             {
-                return EmployeeDAL.NewEmployee(tblEmployee);
+                return StaffDAL.NewStaff(staff, userAccount);
             }
             catch (Exception)
             {
@@ -58,11 +57,11 @@ namespace HMS.BLL
             }
         }
 
-        public int UpdateEmployee(TblEmployee tblEmployee)
+        public int UpdateStaff(Staff staff)
         {
             try
             {
-                return EmployeeDAL.UpdateEmployee(tblEmployee);
+                return StaffDAL.UpdateStaff(staff);
             }
             catch (Exception)
             {
@@ -71,11 +70,11 @@ namespace HMS.BLL
             }
         }
 
-        public int DeleteEmployee(int EmpId)
+        public int DeleteStaff(int StaffId)
         {
             try
             {
-                return EmployeeDAL.DeleteEmployee(EmpId);
+                return StaffDAL.DeleteStaff(StaffId);
             }
             catch (Exception)
             {

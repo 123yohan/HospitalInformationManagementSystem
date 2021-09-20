@@ -12,11 +12,10 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TblUserGroup
+    public partial class UserRole
     {
-        public int UserGroupId { get; set; }
+        public int RoleId { get; set; }
         public string Name { get; set; }
         public Nullable<bool> Active { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
     }
 }

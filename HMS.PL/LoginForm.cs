@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HMS.DAL;
+using HMS.Entity.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,9 +26,51 @@ namespace HMS.PL
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            MasterForm MF = new MasterForm();
-            MF.Show();
-            this.Hide();
+            if(String.IsNullOrEmpty(txtUserName.Text))
+            {
+                MessageBox.Show("Please Enter User Name", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserName.Focus();
+                return;
+            }
+
+            if (String.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Please Enter Password", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+
+            var userAcc = new UserAccount
+            {
+                Username = txtUserName.Text.Trim(),
+                Password = txtPassword.Text.Trim()
+            };
+
+
+           var res =  LoginDAL.Login(userAcc);
+
+            if(res == -1)
+            {
+                MessageBox.Show("User Name Invalid", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtUserName.Focus();
+                return;
+            }
+
+            if(res == -2)
+            {
+                MessageBox.Show("Password Invalid", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPassword.Focus();
+                return;
+            }
+
+            if(res > 0)
+            {
+                MasterForm MF = new MasterForm();
+                MF.Show();
+                this.Hide();
+            }
+
+            
         }
     }
 }

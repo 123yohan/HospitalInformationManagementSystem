@@ -12,15 +12,20 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TblEmployee
+    public partial class Staff
     {
-        public int EmpId { get; set; }
-        public Nullable<int> UserGroupId { get; set; }
-        public string EmpName { get; set; }
-        public string EmpAddress { get; set; }
-        public string EmpContactNo { get; set; }
-        public string EmpGender { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public int StaffId { get; set; }
+        public string StaffType { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string MobileNo { get; set; }
+        public string Nic { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
+        public Nullable<int> UserRoleId { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
+        public Nullable<bool> Active { get; set; }
     }
 }

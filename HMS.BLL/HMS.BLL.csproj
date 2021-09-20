@@ -42,8 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppoitmentBLL.cs" />
+    <Compile Include="ComplainBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EmployeeBLL.cs" />
+    <Compile Include="StaffBLL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HMS.DAL\HMS.DAL.csproj">
@@ -51,8 +53,12 @@
       <Name>HMS.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMS.Entity\HMS.Entity.csproj">
-      <Project>{53B46231-3070-4C11-B577-E7A10BFF7293}</Project>
+      <Project>{191F9BF2-6D45-4FA6-AE6D-8F5CD57A451D}</Project>
       <Name>HMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Models\HMS.Models.csproj">
+      <Project>{D932C08F-F408-4F5F-8A27-DB7D36B359D3}</Project>
+      <Name>HMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

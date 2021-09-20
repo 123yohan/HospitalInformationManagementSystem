@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace HMS.PL
 {
-    public partial class EmployeePL : Form
+    public partial class ComplaintsDetailsPL : Form
     {
-        public EmployeePL()
+        public ComplaintsDetailsPL()
         {
             InitializeComponent();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -114,17 +114,158 @@ namespace HMS.PL
        
         private void button1_Click(object sender, EventArgs e)
         {
+            //foreach (Form f in this.MdiChildren)
+            //{
+            //    if (f.GetType() == typeof(StaffPL))
+            //    {
+            //        f.Activate();
+            //        return;
+            //    }
+            //}
+            //Form frm = new StaffPL();
+            //frm.MdiParent = this;
+            //frm.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(EmployeePL))
+                if (f.GetType() == typeof(StaffDetailsPL))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form frm = new EmployeePL();
+            Form frm = new StaffDetailsPL();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void btnPatient_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PatientDetailsPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new PatientDetailsPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnComplatine_Click(object sender, EventArgs e)
+        {
+
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(ComplaintsAddPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new ComplaintsAddPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPc_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PageConfigPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new PageConfigPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void bnappointment_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(AppoitmentPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new AppoitmentPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void aDDEMPLOYEEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uSERACCOUNTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iNVOICEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gRNToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void oTHERPAYMENTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void uSERACCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aDDBRANDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aDDITEMSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sTOCKREPORTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sALESREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gRNREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cUSTOMERREPORTSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

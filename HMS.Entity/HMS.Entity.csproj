@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53B46231-3070-4C11-B577-E7A10BFF7293}</ProjectGuid>
+    <ProjectGuid>{191F9BF2-6D45-4FA6-AE6D-8F5CD57A451D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>HMS.Entity</RootNamespace>
@@ -50,55 +50,73 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\HIMSDataModel.Context.cs">
+    <Compile Include="Models\Appointment.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AppointmentManager.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Complaint.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HMSDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HIMSDataModel.Context.tt</DependentUpon>
+      <DependentUpon>HMSDataModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HIMSDataModel.cs">
+    <Compile Include="Models\HMSDataModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HIMSDataModel.Designer.cs">
+    <Compile Include="Models\HMSDataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>HIMSDataModel.edmx</DependentUpon>
+      <DependentUpon>HMSDataModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\TblEmployee.cs">
-      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+    <Compile Include="Models\Page.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TblUserGroup.cs">
-      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+    <Compile Include="Models\Patient.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Staff.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserAccount.cs">
-      <DependentUpon>HIMSDataModel.tt</DependentUpon>
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRole.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserRoleAccessLevel.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\HIMSDataModel.edmx">
+    <EntityDeploy Include="Models\HMSDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>HIMSDataModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>HMSDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
-    <None Include="Models\HIMSDataModel.edmx.diagram">
-      <DependentUpon>HIMSDataModel.edmx</DependentUpon>
+    <None Include="Models\HMSDataModel.edmx.diagram">
+      <DependentUpon>HMSDataModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Models\HIMSDataModel.Context.tt">
+    <Content Include="Models\HMSDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>HIMSDataModel.Context.cs</LastGenOutput>
-      <DependentUpon>HIMSDataModel.edmx</DependentUpon>
+      <LastGenOutput>HMSDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>HMSDataModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Models\HIMSDataModel.tt">
+    <Content Include="Models\HMSDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>HIMSDataModel.edmx</DependentUpon>
-      <LastGenOutput>HIMSDataModel.cs</LastGenOutput>
+      <DependentUpon>HMSDataModel.edmx</DependentUpon>
+      <LastGenOutput>HMSDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
