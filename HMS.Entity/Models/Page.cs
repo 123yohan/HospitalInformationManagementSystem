@@ -12,14 +12,10 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserAccount
+    public partial class Page
     {
-        public int UserId { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
         public Nullable<bool> Active { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public string Status { get; set; }
     }
 }

@@ -29,8 +29,9 @@ namespace HMS.PL
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvStaff = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +47,7 @@ namespace HMS.PL
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddStaff = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,13 +61,13 @@ namespace HMS.PL
             this.label1.TabIndex = 7;
             this.label1.Text = "Staff Details";
             // 
-            // dataGridView1
+            // dgvStaff
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvStaff.AllowUserToAddRows = false;
+            this.dgvStaff.AllowUserToDeleteRows = false;
+            this.dgvStaff.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -79,16 +80,21 @@ namespace HMS.PL
             this.Column10,
             this.Column11,
             this.Column12});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 51);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1342, 512);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvStaff.Location = new System.Drawing.Point(0, 51);
+            this.dgvStaff.Name = "dgvStaff";
+            this.dgvStaff.ReadOnly = true;
+            this.dgvStaff.RowHeadersVisible = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgvStaff.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvStaff.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvStaff.Size = new System.Drawing.Size(1342, 512);
+            this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStaff_CellDoubleClick);
             // 
             // Column1
             // 
+            this.Column1.DataPropertyName = "StaffId";
             this.Column1.HeaderText = "ID";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -96,6 +102,7 @@ namespace HMS.PL
             // 
             // Column2
             // 
+            this.Column2.DataPropertyName = "FirstName";
             this.Column2.HeaderText = "First Name";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
@@ -103,6 +110,7 @@ namespace HMS.PL
             // 
             // Column3
             // 
+            this.Column3.DataPropertyName = "LastName";
             this.Column3.HeaderText = "Last Name";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -110,6 +118,7 @@ namespace HMS.PL
             // 
             // Column4
             // 
+            this.Column4.DataPropertyName = "Address";
             this.Column4.HeaderText = "Address";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
@@ -117,12 +126,14 @@ namespace HMS.PL
             // 
             // Column5
             // 
+            this.Column5.DataPropertyName = "MobileNo";
             this.Column5.HeaderText = "Mobile No";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
+            this.Column6.DataPropertyName = "Email";
             this.Column6.HeaderText = "Email";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -130,36 +141,42 @@ namespace HMS.PL
             // 
             // Column7
             // 
+            this.Column7.DataPropertyName = "Gender";
             this.Column7.HeaderText = "Gender";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
             // Column8
             // 
+            this.Column8.DataPropertyName = "UserRoleName";
             this.Column8.HeaderText = "User Role";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
             // 
             // Column9
             // 
+            this.Column9.DataPropertyName = "Username";
             this.Column9.HeaderText = "User Name";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
             // 
             // Column10
             // 
+            this.Column10.DataPropertyName = "StaffType";
             this.Column10.HeaderText = "User Type";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
             // 
             // Column11
             // 
+            this.Column11.DataPropertyName = "Active";
             this.Column11.HeaderText = "Active";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
             // 
             // Column12
             // 
+            this.Column12.DataPropertyName = "CreatedDateTime";
             this.Column12.HeaderText = "Registed Date";
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
@@ -208,6 +225,7 @@ namespace HMS.PL
             this.btnRefresh.Size = new System.Drawing.Size(30, 27);
             this.btnRefresh.TabIndex = 5;
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // StaffDetailsPL
             // 
@@ -215,7 +233,7 @@ namespace HMS.PL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(1342, 564);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvStaff);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnAddStaff);
             this.Controls.Add(this.btnRefresh);
@@ -224,7 +242,8 @@ namespace HMS.PL
             this.Name = "StaffDetailsPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StaffDetailsPL";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.StaffDetailsPL_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,7 +254,7 @@ namespace HMS.PL
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using HMS.BLL;
+using HMS.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +13,13 @@ using System.Windows.Forms;
 namespace HMS.PL
 {
     public partial class StaffDetailsPL : Form
-    {
+    { 
+
+         StaffBLL staffBLL;
         public StaffDetailsPL()
         {
             InitializeComponent();
+            staffBLL = new StaffBLL();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -40,9 +45,33 @@ namespace HMS.PL
                     return;
                 }
             }
-            Form frm = new StaffPL();
+            Form frm = new StaffPL(LoadDataDgvStaff);
             frm.MdiParent = MasterForm.ActiveForm;
             frm.Show();
+        }
+
+        private void StaffDetailsPL_Load(object sender, EventArgs e)
+        {
+            LoadDataDgvStaff();
+        }
+
+        public int LoadDataDgvStaff()
+        {
+            staffBLL.GetStaffs(dgvStaff);
+            return 0;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            staffBLL.GetStaffs(dgvStaff);
+        }
+
+        private void dgvStaff_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            foreach(var res in dgvStaff.SelectedRows)
+            {
+               
+            }
         }
     }
 }

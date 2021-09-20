@@ -12,14 +12,10 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserAccount
+    public partial class AppointmentManager
     {
-        public int UserId { get; set; }
-        public Nullable<int> EmployeeId { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public Nullable<bool> Active { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public string Status { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> StaffId { get; set; }
+        public Nullable<int> AppoitmentId { get; set; }
     }
 }

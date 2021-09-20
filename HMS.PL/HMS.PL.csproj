@@ -43,6 +43,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppoitmentPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppoitmentPL.Designer.cs">
+      <DependentUpon>AppoitmentPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintsAddPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintsAddPL.Designer.cs">
+      <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComplaintsDetailsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintsDetailsPL.Designer.cs">
+      <DependentUpon>ComplaintsDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PageConfigPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PageConfigPL.Designer.cs">
+      <DependentUpon>PageConfigPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="PatientAddPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +117,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AppoitmentPL.resx">
+      <DependentUpon>AppoitmentPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComplaintsAddPL.resx">
+      <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PageConfigPL.resx">
+      <DependentUpon>PageConfigPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PatientAddPL.resx">
       <DependentUpon>PatientAddPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,6 +157,22 @@
     <ProjectReference Include="..\HMS.BLL\HMS.BLL.csproj">
       <Project>{d4ac407a-18d5-4f79-86f8-f87e489cfaa3}</Project>
       <Name>HMS.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.DAL\HMS.DAL.csproj">
+      <Project>{664D0839-34EB-4D82-A78C-2433F05EAFE7}</Project>
+      <Name>HMS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Entity\HMS.Entity.csproj">
+      <Project>{191F9BF2-6D45-4FA6-AE6D-8F5CD57A451D}</Project>
+      <Name>HMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Models\HMS.Models.csproj">
+      <Project>{D932C08F-F408-4F5F-8A27-DB7D36B359D3}</Project>
+      <Name>HMS.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Other\HMS.Other.csproj">
+      <Project>{BB144531-FDB6-4715-960F-CC00A78F93B6}</Project>
+      <Name>HMS.Other</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +207,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-cancel-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-why-quest-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-keep-locked-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-calendar-plus-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\computer-icons-avatar-user-login-avatar-thumb.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-supplier-40.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
