@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using HMS;
 using HMS.Entity.Models;
+using HMS.Models;
 using HMS.Other;
+using Scrypt;
 
 namespace HMS.DAL
 {
@@ -15,17 +17,37 @@ namespace HMS.DAL
         private static readonly UOVT_HIMSEntities _Con = new UOVT_HIMSEntities();
         static int Result = 0;
 
-        public static List<Staff> GetStaffs()
+        public static List<staff> GetStaffs()
         {
             try
             {
-                return _Con.Staffs.Where(x => x.Active == true).ToList();
+                return (from s in _Con.Staffs
+                        join u in _Con.UserRoles on s.UserRoleId equals u.RoleId
+                        join a in _Con.UserAccounts on s.StaffId equals a.EmployeeId
+                        where a.Status == "Staff" && a.Active == true && s.Active == true
+                        select new staff
+                        {
+                            StaffId = s.StaffId,
+                            FirstName = s.FirstName,
+                            LastName = s.LastName,
+                            StaffType = s.StaffType,
+                            Address = s.Address,
+                            MobileNo = s.MobileNo,
+                            Nic = s.Nic,
+                            Email = s.Email,
+                            Gender = s.Gender,
+                            UserRoleName = u.Name,
+                            UserName = a.Username,
+                            Active = s.Active,
+                            CreatedDateTime = s.CreatedDateTime
+                            
+                        }).ToList();
             }
             catch (Exception)
             {
                 throw;
             }
-          
+
         }
 
         public static int NewStaff(Staff staff, UserAccount userAccount)
@@ -42,7 +64,9 @@ namespace HMS.DAL
                     var _staff = _Con.Staffs.Add(staff);
                     Result = _Con.SaveChanges();
 
+                    ScryptEncoder encoder = new ScryptEncoder();
                     userAccount.EmployeeId = _staff.StaffId;
+                    userAccount.Password = encoder.Encode(userAccount.Password);
                     _Con.UserAccounts.Add(userAccount);
                     Result = _Con.SaveChanges();
                 }

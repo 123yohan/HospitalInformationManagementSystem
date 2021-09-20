@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace HMS.PL
 {
     public partial class PatientDetailsPL : Form
     {
+       
         public PatientDetailsPL()
         {
             InitializeComponent();
+           
+          
         }
 
         private void btnAddPaitent_Click(object sender, EventArgs e)
@@ -44,6 +48,11 @@ namespace HMS.PL
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PatientDetailsPL_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

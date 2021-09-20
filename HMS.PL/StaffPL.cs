@@ -16,12 +16,15 @@ namespace HMS.PL
     public partial class StaffPL : Form
     {
         StaffBLL staffBLL;
-        public StaffPL()
+        Func<int> DataLoadMethod;
+        public StaffPL(Func<int> DataLoadMethod)
         {
             InitializeComponent();
             staffBLL = new StaffBLL();
             staffBLL.GetUserGroup(cmbUserRole);
             cmbUserRole.SelectedIndex = -1;
+
+            this.DataLoadMethod = DataLoadMethod;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -98,6 +101,7 @@ namespace HMS.PL
                 {
                     MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
+                    DataLoadMethod();
                 }
             }
 
@@ -118,7 +122,8 @@ namespace HMS.PL
                 UserRoleId =Convert.ToInt32( cmbUserRole.SelectedValue.ToString()),
                 StaffType = cmbUserType.Text,
                 CreatedBy = HMSComman.UserAccId,
-                CreatedDateTime = DateTime.Now
+                CreatedDateTime = DateTime.Now,
+                Active = true
 
             };
 

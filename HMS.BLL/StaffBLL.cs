@@ -15,8 +15,8 @@ namespace HMS.BLL
         {
             try
             {
-                dgvEmployee.DataSource = StaffDAL.GetStaffs();
                 dgvEmployee.AutoGenerateColumns = false;
+                dgvEmployee.DataSource = StaffDAL.GetStaffs();
                 return dgvEmployee;
 
             }
