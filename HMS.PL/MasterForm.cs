@@ -192,13 +192,13 @@ namespace HMS.PL
         {
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(AppoitmentPL))
+                if (f.GetType() == typeof(AppointmentViewPL))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form frm = new AppoitmentPL();
+            Form frm = new AppointmentViewPL();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -266,6 +266,36 @@ namespace HMS.PL
         private void aBOUTToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAppointmentReport_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(Appointment_ReportPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new Appointment_ReportPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(UserLoginPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new UserLoginPL();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

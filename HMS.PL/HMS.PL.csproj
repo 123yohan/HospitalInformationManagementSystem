@@ -43,6 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appointment ReportPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment ReportPL.Designer.cs">
+      <DependentUpon>Appointment ReportPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentViewPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentViewPL.Designer.cs">
+      <DependentUpon>AppointmentViewPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppoitmentPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -54,12 +66,6 @@
     </Compile>
     <Compile Include="ComplaintsAddPL.Designer.cs">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComplaintsDetailsPL.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ComplaintsDetailsPL.Designer.cs">
-      <DependentUpon>ComplaintsDetailsPL.cs</DependentUpon>
     </Compile>
     <Compile Include="PageConfigPL.cs">
       <SubType>Form</SubType>
@@ -109,8 +115,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserLoginPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLoginPL.Designer.cs">
+      <DependentUpon>UserLoginPL.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Appointment ReportPL.resx">
+      <DependentUpon>Appointment ReportPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentViewPL.resx">
+      <DependentUpon>AppointmentViewPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppoitmentPL.resx">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +160,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginPL.resx">
+      <DependentUpon>UserLoginPL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -213,6 +234,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-supplier-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-card-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-new-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-microsoft-to-do-app-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

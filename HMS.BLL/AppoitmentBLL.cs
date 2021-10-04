@@ -1,15 +1,12 @@
 ﻿using HMS.DAL;
 using HMS.Entity.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using HMS.Models;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HMS.BLL
 {
-   public class AppoitmentBLL
+    public class AppoitmentBLL
     {
         public ListView GetStaff(ListView lstStaff, string Name)
         {
@@ -42,6 +39,16 @@ namespace HMS.BLL
         public async Task<int> AddAppointment(Appointment appointment, int StaffId)
         {
             return await AppointmentDAL.AddAppointment(appointment, StaffId);
+        }    
+        
+        public async Task<int> UpdateAppointment(appointment appointment)
+        {
+            return await AppointmentDAL.UpdateAppointment(appointment);
+        }  
+        
+        public async Task<int> DeleteAppointment(int appointmentid)
+        {
+            return await AppointmentDAL.DeleteAppointment(appointmentid);
         }
     }
 }

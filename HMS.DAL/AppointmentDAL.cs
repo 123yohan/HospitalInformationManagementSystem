@@ -1,4 +1,6 @@
 ﻿using HMS.Entity.Models;
+using HMS.Models;
+using HMS.Other;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +70,40 @@ namespace HMS.DAL
 
             _Con.AppointmentManagers.Add(am);
             return await _Con.SaveChangesAsync();
+
+        }
+
+        public static async Task<int> UpdateAppointment(appointment appointment)
+        {
+            var res = _Con.Appointments.Find(appointment.AppoitmentId);
+
+            res.PatientId = appointment.PatientId;
+            res.Time = appointment.Time;
+            res.Date = appointment.Date;
+            res.UpdateBy = HMSComman.UserAccId;
+            res.UpdateDate = DateTime.Now;
+
+            var res2 = _Con.AppointmentManagers.Where(x => x.AppoitmentId == appointment.AppoitmentId).FirstOrDefault();
+            if(res2 != null)
+            {
+                res2.StaffId = appointment.StaffId;
+              return  await _Con.SaveChangesAsync();
+            }
+
+            return 0;
+
+        }
+
+        public static async Task<int> DeleteAppointment( int AppoitmentId)
+        {
+            var res = _Con.Appointments.Where(x => x.AppoitmentId == AppoitmentId && x.Active == true).FirstOrDefault();
+            if(res != null)
+            {
+                res.Active = false;
+                return await _Con.SaveChangesAsync();
+            }
+
+            return 0;
 
         }
     }

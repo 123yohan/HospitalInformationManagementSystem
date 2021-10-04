@@ -32,7 +32,11 @@ namespace HMS.PL
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lbl_time = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -40,19 +44,22 @@ namespace HMS.PL
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.btnStaff = new System.Windows.Forms.FlowLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.btnUserLog = new System.Windows.Forms.FlowLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.btnPatient = new System.Windows.Forms.Button();
             this.btnComplatine = new System.Windows.Forms.Button();
             this.btnPc = new System.Windows.Forms.Button();
             this.bnappointment = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.btnAppointmentReport = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.btnStaff.SuspendLayout();
+            this.btnUserLog.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -69,6 +76,38 @@ namespace HMS.PL
             this.panel1.Size = new System.Drawing.Size(999, 70);
             this.panel1.TabIndex = 2;
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(898, 40);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 15);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Admin";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(832, 21);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(108, 18);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Welcome Yohan";
+            // 
+            // label2
+            // 
+            this.label2.Image = global::HMS.PL.Properties.Resources.icons8_hospital_3_45;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 34);
+            this.label2.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -79,6 +118,19 @@ namespace HMS.PL
             this.label1.Size = new System.Drawing.Size(379, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Hospital Information Management System";
+            // 
+            // btnExit
+            // 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.Location = new System.Drawing.Point(946, 18);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(41, 35);
+            this.btnExit.TabIndex = 1;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // panel4
             // 
@@ -160,44 +212,21 @@ namespace HMS.PL
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // btnStaff
+            // btnUserLog
             // 
-            this.btnStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
-            this.btnStaff.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.btnStaff.Controls.Add(this.button2);
-            this.btnStaff.Controls.Add(this.btnPatient);
-            this.btnStaff.Controls.Add(this.btnComplatine);
-            this.btnStaff.Controls.Add(this.btnPc);
-            this.btnStaff.Controls.Add(this.bnappointment);
-            this.btnStaff.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStaff.Location = new System.Drawing.Point(0, 70);
-            this.btnStaff.Name = "btnStaff";
-            this.btnStaff.Size = new System.Drawing.Size(999, 94);
-            this.btnStaff.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(832, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(108, 18);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Welcome Yohan";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(898, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Admin";
+            this.btnUserLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
+            this.btnUserLog.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.btnUserLog.Controls.Add(this.button2);
+            this.btnUserLog.Controls.Add(this.btnPatient);
+            this.btnUserLog.Controls.Add(this.btnComplatine);
+            this.btnUserLog.Controls.Add(this.btnPc);
+            this.btnUserLog.Controls.Add(this.panel2);
+            this.btnUserLog.Controls.Add(this.panel3);
+            this.btnUserLog.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUserLog.Location = new System.Drawing.Point(0, 70);
+            this.btnUserLog.Name = "btnUserLog";
+            this.btnUserLog.Size = new System.Drawing.Size(999, 113);
+            this.btnUserLog.TabIndex = 9;
             // 
             // button2
             // 
@@ -208,7 +237,7 @@ namespace HMS.PL
             this.button2.Image = global::HMS.PL.Properties.Resources.icons8_business_building_40;
             this.button2.Location = new System.Drawing.Point(3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 77);
+            this.button2.Size = new System.Drawing.Size(88, 96);
             this.button2.TabIndex = 10;
             this.button2.Text = "STAFF";
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -224,7 +253,7 @@ namespace HMS.PL
             this.btnPatient.Image = global::HMS.PL.Properties.Resources.icons8_handicapped_40;
             this.btnPatient.Location = new System.Drawing.Point(97, 3);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(88, 77);
+            this.btnPatient.Size = new System.Drawing.Size(88, 96);
             this.btnPatient.TabIndex = 10;
             this.btnPatient.Text = "PATIENT";
             this.btnPatient.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -240,7 +269,7 @@ namespace HMS.PL
             this.btnComplatine.Image = global::HMS.PL.Properties.Resources.icons8_why_quest_40;
             this.btnComplatine.Location = new System.Drawing.Point(191, 3);
             this.btnComplatine.Name = "btnComplatine";
-            this.btnComplatine.Size = new System.Drawing.Size(88, 77);
+            this.btnComplatine.Size = new System.Drawing.Size(88, 96);
             this.btnComplatine.TabIndex = 10;
             this.btnComplatine.Text = "COMPLATINE";
             this.btnComplatine.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -256,7 +285,7 @@ namespace HMS.PL
             this.btnPc.Image = global::HMS.PL.Properties.Resources.icons8_keep_locked_40;
             this.btnPc.Location = new System.Drawing.Point(285, 3);
             this.btnPc.Name = "btnPc";
-            this.btnPc.Size = new System.Drawing.Size(88, 77);
+            this.btnPc.Size = new System.Drawing.Size(88, 96);
             this.btnPc.TabIndex = 10;
             this.btnPc.Text = "PAGE CONFIG";
             this.btnPc.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -265,40 +294,90 @@ namespace HMS.PL
             // 
             // bnappointment
             // 
+            this.bnappointment.Dock = System.Windows.Forms.DockStyle.Left;
             this.bnappointment.FlatAppearance.BorderSize = 0;
             this.bnappointment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bnappointment.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnappointment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.bnappointment.Image = global::HMS.PL.Properties.Resources.icons8_calendar_plus_40;
-            this.bnappointment.Location = new System.Drawing.Point(379, 3);
+            this.bnappointment.Location = new System.Drawing.Point(0, 0);
             this.bnappointment.Name = "bnappointment";
-            this.bnappointment.Size = new System.Drawing.Size(88, 77);
+            this.bnappointment.Size = new System.Drawing.Size(88, 98);
             this.bnappointment.TabIndex = 10;
             this.bnappointment.Text = "APPOINTMENT";
             this.bnappointment.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.bnappointment.UseVisualStyleBackColor = true;
             this.bnappointment.Click += new System.EventHandler(this.bnappointment_Click);
             // 
-            // label2
+            // btnAppointmentReport
             // 
-            this.label2.Image = global::HMS.PL.Properties.Resources.icons8_hospital_3_45;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 34);
-            this.label2.TabIndex = 4;
+            this.btnAppointmentReport.FlatAppearance.BorderSize = 0;
+            this.btnAppointmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointmentReport.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppointmentReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAppointmentReport.Image = global::HMS.PL.Properties.Resources.icons8_report_card_40;
+            this.btnAppointmentReport.Location = new System.Drawing.Point(102, -1);
+            this.btnAppointmentReport.Name = "btnAppointmentReport";
+            this.btnAppointmentReport.Size = new System.Drawing.Size(88, 98);
+            this.btnAppointmentReport.TabIndex = 10;
+            this.btnAppointmentReport.Text = "APPOINTMENTT REPORT";
+            this.btnAppointmentReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAppointmentReport.UseVisualStyleBackColor = true;
+            this.btnAppointmentReport.Click += new System.EventHandler(this.btnAppointmentReport_Click);
             // 
-            // btnExit
+            // button1
             // 
-            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(946, 18);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(41, 35);
-            this.btnExit.TabIndex = 1;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button1.Image = global::HMS.PL.Properties.Resources.icons8_report_card_40;
+            this.button1.Location = new System.Drawing.Point(8, -6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(88, 96);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "USER LOG REPORT";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.bnappointment);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(379, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 100);
+            this.panel2.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnAppointmentReport);
+            this.panel3.Controls.Add(this.button1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(585, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 100);
+            this.panel3.TabIndex = 12;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.button3.Image = global::HMS.PL.Properties.Resources.icons8_microsoft_to_do_app_30;
+            this.button3.Location = new System.Drawing.Point(88, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(88, 98);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "APPOINTMENT";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // MasterForm
             // 
@@ -306,7 +385,7 @@ namespace HMS.PL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.ClientSize = new System.Drawing.Size(999, 559);
-            this.Controls.Add(this.btnStaff);
+            this.Controls.Add(this.btnUserLog);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -319,7 +398,9 @@ namespace HMS.PL
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.btnStaff.ResumeLayout(false);
+            this.btnUserLog.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,7 +416,7 @@ namespace HMS.PL
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.FlowLayoutPanel btnStaff;
+        private System.Windows.Forms.FlowLayoutPanel btnUserLog;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnPatient;
         private System.Windows.Forms.Label label2;
@@ -344,6 +425,11 @@ namespace HMS.PL
         private System.Windows.Forms.Button bnappointment;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnAppointmentReport;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button3;
     }
 }
 
