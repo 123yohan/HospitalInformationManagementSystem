@@ -91,7 +91,7 @@ namespace HMS.PL
                     }
                 }
 
-                int AppoimentId = Convert.ToInt32(dgvAppointmentReport.Rows[e.RowIndex].Cells[6].Value);
+                int AppoimentId = Convert.ToInt32(dgvAppointmentReport.Rows[e.RowIndex].Cells[8].Value);
                 Form frm = new AppoitmentPL(AppoimentId);
                 frm.MdiParent = MasterForm.ActiveForm;
                 frm.Show();
@@ -101,13 +101,30 @@ namespace HMS.PL
             
             if (e.ColumnIndex == dgvAppointmentReport.Columns["DELETE"].Index && e.RowIndex >= 0)
             {
-                int aid = Convert.ToInt32( dgvAppointmentReport.Rows[e.RowIndex].Cells[6].Value);
+                int aid = Convert.ToInt32( dgvAppointmentReport.Rows[e.RowIndex].Cells[8].Value);
                 if (await DeleteAppoiment(aid) > 0)
                 {
                     MessageBox.Show("System Alert", "Delete Succesfully", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     appointmentReportBLL.GetAllAppointments(dgvAppointmentReport);
                 }
             }
+
+          
+            if (e.RowIndex >= 0 && e.ColumnIndex == 6)
+            {
+                DataGridViewRow row = dgvAppointmentReport.Rows[e.RowIndex];
+                row.Cells["Approved"].Value = !Convert.ToBoolean(row.Cells["Approved"].EditedFormattedValue);
+                if (Convert.ToBoolean(row.Cells["Approved"].Value))
+                {
+
+                    await appoitmentBLL.ApprovedAppointment(Convert.ToInt32(row.Cells[8].Value));
+                    appointmentReportBLL.GetAllAppointments(dgvAppointmentReport);
+                }
+            }
+
+
+
+
         }
 
         public async Task<int> DeleteAppoiment(int id)

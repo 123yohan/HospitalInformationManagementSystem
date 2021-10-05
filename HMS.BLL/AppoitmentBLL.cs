@@ -44,8 +44,18 @@ namespace HMS.BLL
         public async Task<int> UpdateAppointment(appointment appointment)
         {
             return await AppointmentDAL.UpdateAppointment(appointment);
-        }  
+        }
+
+        public async Task<int> ApprovedAppointment(int appointmentId)
+        {
+            return await AppointmentDAL.ApprovedAppointment(appointmentId);
+        } 
         
+        public async Task<int> CompletedAppointment(int appointmentId)
+        {
+            return await AppointmentDAL.CompletedAppointment(appointmentId);
+        }
+
         public async Task<int> DeleteAppointment(int appointmentid)
         {
             return await AppointmentDAL.DeleteAppointment(appointmentid);

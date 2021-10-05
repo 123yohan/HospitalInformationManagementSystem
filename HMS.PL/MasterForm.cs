@@ -297,5 +297,50 @@ namespace HMS.PL
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(ApprovedAppoinmentPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new ApprovedAppoinmentPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnDletedAppointment_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(DeleteAppoinmentRecordPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new DeleteAppoinmentRecordPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnVisitors_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(VisitorsPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new VisitorsPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

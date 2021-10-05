@@ -86,39 +86,122 @@ namespace HMS.DAL
 
         public static dynamic GetAllAppointments()
         {
-            var app = _Con.AppointmentManagers. ToList();
+            var app = _Con.AppointmentManagers.ToList();
             List<appointment> _appointment = new List<appointment>();
 
-                foreach (var item in app)
+            foreach (var item in app)
+            {
+                var res = (from a in _Con.Appointments
+                           join p in _Con.Patients
+                           on a.PatientId equals p.PatientId
+                           join s in _Con.Staffs on
+                           item.StaffId equals s.StaffId
+                           where a.AppoitmentId == item.AppoitmentId && a.Active == true && a.IsApproved == false
+                           select new appointment
+                           {
+                               AppoitmentId = a.AppoitmentId,
+                               PatientName = p.FirstName + " " + p.LastName,
+                               Time = a.Time,
+                               Date = a.Date,
+                               StaffName = s.FirstName + " " + s.LastName,
+                               Status = a.IsApproved == true ? "Approved" : "Pending"
+                           }).FirstOrDefault();
+
+                if (res != null)
                 {
-                    var res = (from a in _Con.Appointments
-                               join p in _Con.Patients
-                               on a.PatientId equals p.PatientId
-                               join s in _Con.Staffs on
-                               item.StaffId equals s.StaffId
-                               where a.AppoitmentId == item.AppoitmentId && a.Active == true
-                               select new appointment
-                               {
-                                   AppoitmentId = a.AppoitmentId,
-                                   PatientName = p.FirstName + " " + p.LastName,
-                                   Time = a.Time,
-                                   Date = a.Date,
-                                   StaffName = s.FirstName + " " + s.LastName,
-
-                               }).FirstOrDefault();
-
-                    if (res != null)
+                    _appointment.Add(new appointment
                     {
-                        _appointment.Add(new appointment
-                        {
-                            AppoitmentId = res.AppoitmentId,
-                            PatientName = res.PatientName,
-                            Time = res.Time,
-                            Date = res.Date,
-                             StaffName = res.StaffName,
-                        });
-                    }
+                        AppoitmentId = res.AppoitmentId,
+                        PatientName = res.PatientName,
+                        Time = res.Time,
+                        Date = res.Date,
+                        StaffName = res.StaffName,
+                        Status = res.Status
+                    });
                 }
+            }
+
+            return _appointment;
+
+        }
+
+        public static dynamic GetApprovedAppointments()
+        {
+            var app = _Con.AppointmentManagers.ToList();
+            List<appointment> _appointment = new List<appointment>();
+
+            foreach (var item in app)
+            {
+                var res = (from a in _Con.Appointments
+                           join p in _Con.Patients
+                           on a.PatientId equals p.PatientId
+                           join s in _Con.Staffs on
+                           item.StaffId equals s.StaffId
+                           where a.AppoitmentId == item.AppoitmentId && a.Active == true && a.IsApproved == true && a.IsCompleted == false
+                           select new appointment
+                           {
+                               AppoitmentId = a.AppoitmentId,
+                               PatientName = p.FirstName + " " + p.LastName,
+                               Time = a.Time,
+                               Date = a.Date,
+                               StaffName = s.FirstName + " " + s.LastName,
+                               Status = a.IsApproved == true ? "Approved" : "Pending"
+                           }).FirstOrDefault();
+
+                if (res != null)
+                {
+                    _appointment.Add(new appointment
+                    {
+                        AppoitmentId = res.AppoitmentId,
+                        PatientName = res.PatientName,
+                        Time = res.Time,
+                        Date = res.Date,
+                        StaffName = res.StaffName,
+                        Status = res.Status
+                    });
+                }
+            }
+
+            return _appointment;
+
+        }
+
+        public static dynamic GetDeleteAppointments()
+        {
+            var app = _Con.AppointmentManagers.ToList();
+            List<appointment> _appointment = new List<appointment>();
+
+            foreach (var item in app)
+            {
+                var res = (from a in _Con.Appointments
+                           join p in _Con.Patients
+                           on a.PatientId equals p.PatientId
+                           join s in _Con.Staffs on
+                           item.StaffId equals s.StaffId
+                           where a.AppoitmentId == item.AppoitmentId && a.Active == false
+                           select new appointment
+                           {
+                               AppoitmentId = a.AppoitmentId,
+                               PatientName = p.FirstName + " " + p.LastName,
+                               Time = a.Time,
+                               Date = a.Date,
+                               StaffName = s.FirstName + " " + s.LastName,
+                               Status = a.IsApproved == true ? "Approved" : "Pending"
+                           }).FirstOrDefault();
+
+                if (res != null)
+                {
+                    _appointment.Add(new appointment
+                    {
+                        AppoitmentId = res.AppoitmentId,
+                        PatientName = res.PatientName,
+                        Time = res.Time,
+                        Date = res.Date,
+                        StaffName = res.StaffName,
+                        Status = res.Status
+                    });
+                }
+            }
 
             return _appointment;
 

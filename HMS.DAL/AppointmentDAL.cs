@@ -84,20 +84,34 @@ namespace HMS.DAL
             res.UpdateDate = DateTime.Now;
 
             var res2 = _Con.AppointmentManagers.Where(x => x.AppoitmentId == appointment.AppoitmentId).FirstOrDefault();
-            if(res2 != null)
+            if (res2 != null)
             {
                 res2.StaffId = appointment.StaffId;
-              return  await _Con.SaveChangesAsync();
+                return await _Con.SaveChangesAsync();
             }
 
             return 0;
 
         }
 
-        public static async Task<int> DeleteAppointment( int AppoitmentId)
+        public static async Task<int> ApprovedAppointment(int appointmentId)
+        {
+            var res = _Con.Appointments.Find(appointmentId);
+            res.IsApproved = true;
+            return await _Con.SaveChangesAsync();
+        }
+
+        public static async Task<int> CompletedAppointment(int appointmentId)
+        {
+            var res = _Con.Appointments.Find(appointmentId);
+            res.IsCompleted = true;
+            return await _Con.SaveChangesAsync();
+        }
+
+        public static async Task<int> DeleteAppointment(int AppoitmentId)
         {
             var res = _Con.Appointments.Where(x => x.AppoitmentId == AppoitmentId && x.Active == true).FirstOrDefault();
-            if(res != null)
+            if (res != null)
             {
                 res.Active = false;
                 return await _Con.SaveChangesAsync();

@@ -12,18 +12,19 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Appointment
+    public partial class Visitor
     {
-        public int AppoitmentId { get; set; }
-        public Nullable<int> PatientId { get; set; }
-        public Nullable<System.DateTime> Time { get; set; }
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Address { get; set; }
+        public string Nic { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
+        public Nullable<System.TimeSpan> InTime { get; set; }
+        public Nullable<System.TimeSpan> OutTime { get; set; }
+        public string Purpose { get; set; }
+        public string Note { get; set; }
         public Nullable<int> CreatedBy { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<int> UpdateBy { get; set; }
-        public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<bool> Active { get; set; }
-        public Nullable<bool> IsApproved { get; set; }
-        public Nullable<bool> IsCompleted { get; set; }
+        public string MobileNo { get; set; }
     }
 }

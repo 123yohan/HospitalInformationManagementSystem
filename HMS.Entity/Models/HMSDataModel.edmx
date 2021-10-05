@@ -17,6 +17,8 @@
           <Property Name="CreatedDate" Type="date" />
           <Property Name="UpdateBy" Type="int" />
           <Property Name="UpdateDate" Type="date" />
+          <Property Name="IsApproved" Type="bit" />
+          <Property Name="IsCompleted" Type="bit" />
           <Property Name="Active" Type="bit" />
         </EntityType>
         <EntityType Name="AppointmentManagers">
@@ -124,6 +126,23 @@
           <Property Name="CreatedBy" Type="int" />
           <Property Name="CreatedDate" Type="datetime" />
         </EntityType>
+        <EntityType Name="Visitors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="Nic" Type="nvarchar" MaxLength="15" />
+          <Property Name="Date" Type="date" />
+          <Property Name="InTime" Type="time" Precision="7" />
+          <Property Name="MobileNo" Type="nchar" MaxLength="13" />
+          <Property Name="OutTime" Type="time" Precision="7" />
+          <Property Name="Purpose" Type="nvarchar" MaxLength="100" />
+          <Property Name="Note" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
         <EntityContainer Name="UOVT_HIMSModelStoreContainer">
           <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppointmentManagers" EntityType="Self.AppointmentManagers" Schema="dbo" store:Type="Tables" />
@@ -134,6 +153,7 @@
           <EntitySet Name="UserAccount" EntityType="Self.UserAccount" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserRoleAccessLevels" EntityType="Self.UserRoleAccessLevels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Visitors" EntityType="Self.Visitors" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -228,6 +248,7 @@
           <EntitySet Name="Complaints" EntityType="UOVT_HIMSModel.Complaint" />
           <EntitySet Name="AppointmentManagers" EntityType="UOVT_HIMSModel.AppointmentManager" />
           <EntitySet Name="Appointments" EntityType="UOVT_HIMSModel.Appointment" />
+          <EntitySet Name="Visitors" EntityType="UOVT_HIMSModel.Visitor" />
         </EntityContainer>
         <EntityType Name="Complaint">
           <Key>
@@ -268,6 +289,25 @@
           <Property Name="UpdateBy" Type="Int32" />
           <Property Name="UpdateDate" Type="DateTime" Precision="0" />
           <Property Name="Active" Type="Boolean" />
+          <Property Name="IsApproved" Type="Boolean" />
+          <Property Name="IsCompleted" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Visitor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Nic" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="InTime" Type="Time" Precision="7" />
+          <Property Name="OutTime" Type="Time" Precision="7" />
+          <Property Name="Purpose" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="MobileNo" Type="String" MaxLength="13" FixedLength="true" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -391,6 +431,8 @@
           <EntitySetMapping Name="Appointments">
             <EntityTypeMapping TypeName="UOVT_HIMSModel.Appointment">
               <MappingFragment StoreEntitySet="Appointment">
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
                 <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
@@ -400,6 +442,24 @@
                 <ScalarProperty Name="Time" ColumnName="Time" />
                 <ScalarProperty Name="PatientId" ColumnName="PatientId" />
                 <ScalarProperty Name="AppoitmentId" ColumnName="AppoitmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Visitors">
+            <EntityTypeMapping TypeName="UOVT_HIMSModel.Visitor">
+              <MappingFragment StoreEntitySet="Visitors">
+                <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+                <ScalarProperty Name="OutTime" ColumnName="OutTime" />
+                <ScalarProperty Name="InTime" ColumnName="InTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Nic" ColumnName="Nic" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

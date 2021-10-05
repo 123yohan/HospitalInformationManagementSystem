@@ -14,6 +14,7 @@
         <EntityTypeShape EntityType="UOVT_HIMSModel.Complaint" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="UOVT_HIMSModel.AppointmentManager" Width="2" PointX="9.375" PointY="0.75" />
         <EntityTypeShape EntityType="UOVT_HIMSModel.Appointment" Width="1.5" PointX="7.375" PointY="5.75" />
+        <EntityTypeShape EntityType="UOVT_HIMSModel.Visitor" Width="1.5" PointX="0.75" PointY="9.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

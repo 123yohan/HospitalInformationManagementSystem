@@ -92,6 +92,9 @@
     <Compile Include="Models\UserRoleAccessLevel.cs">
       <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Visitor.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

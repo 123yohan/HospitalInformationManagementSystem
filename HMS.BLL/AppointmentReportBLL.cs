@@ -38,6 +38,24 @@ namespace HMS.BLL
             return dgv;
         }
 
+        public DataGridView GetApprovedAppointments(DataGridView dgv)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = AppointmentReportDAL.GetApprovedAppointments();
+            dgv.Columns[2].DefaultCellStyle.Format = "yyyy MMM dd ";
+            dgv.Columns[3].DefaultCellStyle.Format = "h: mm tt";
+            return dgv;
+        }
+
+        public DataGridView GetDeleteAppointments(DataGridView dgv)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = AppointmentReportDAL.GetDeleteAppointments();
+            dgv.Columns[2].DefaultCellStyle.Format = "yyyy MMM dd ";
+            dgv.Columns[3].DefaultCellStyle.Format = "h: mm tt";
+            return dgv;
+        }
+
 
         public List<appointment> GetAllAppointments(int AppointmentsId)
         {

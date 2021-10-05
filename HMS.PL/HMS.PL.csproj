@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -61,11 +67,23 @@
     <Compile Include="AppoitmentPL.Designer.cs">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApprovedAppoinmentPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovedAppoinmentPL.Designer.cs">
+      <DependentUpon>ApprovedAppoinmentPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="ComplaintsAddPL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ComplaintsAddPL.Designer.cs">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAppoinmentRecordPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAppoinmentRecordPL.Designer.cs">
+      <DependentUpon>DeleteAppoinmentRecordPL.cs</DependentUpon>
     </Compile>
     <Compile Include="PageConfigPL.cs">
       <SubType>Form</SubType>
@@ -121,6 +139,12 @@
     <Compile Include="UserLoginPL.Designer.cs">
       <DependentUpon>UserLoginPL.cs</DependentUpon>
     </Compile>
+    <Compile Include="VisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitorsPL.Designer.cs">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Appointment ReportPL.resx">
@@ -132,8 +156,14 @@
     <EmbeddedResource Include="AppoitmentPL.resx">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApprovedAppoinmentPL.resx">
+      <DependentUpon>ApprovedAppoinmentPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComplaintsAddPL.resx">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAppoinmentRecordPL.resx">
+      <DependentUpon>DeleteAppoinmentRecordPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageConfigPL.resx">
       <DependentUpon>PageConfigPL.cs</DependentUpon>
@@ -164,6 +194,9 @@
     <EmbeddedResource Include="UserLoginPL.resx">
       <DependentUpon>UserLoginPL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VisitorsPL.resx">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HMS.BLL\HMS.BLL.csproj">
@@ -188,6 +221,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Close.png" />
   </ItemGroup>
   <ItemGroup>
@@ -243,6 +277,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-microsoft-to-do-app-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-presentation-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-user-data-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-pdf-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-pdf-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tourist-guide-skin-type-1-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

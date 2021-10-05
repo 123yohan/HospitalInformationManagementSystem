@@ -11,7 +11,7 @@ namespace HMS.Models
         public int AppoitmentId { get; set; }
         public int PatientId { get; set; }
         public int StaffId { get; set; }
-      
+        public string Status { get; set; }
         public string PatientName { get; set; }
         public string StaffName { get; set; }
         public string CreatedName { get; set; }

@@ -105,6 +105,8 @@ namespace HMS.PL
                     PatientId = patientId,
                     CreatedBy = HMSComman.UserAccId,
                     Active = true,
+                    IsApproved = false,
+                    IsCompleted = false,
                     Time = dtpAppoinmentTime.Value,
                     Date = dtpAppointmentDate.Value,
                     CreatedDate = DateTime.Now,

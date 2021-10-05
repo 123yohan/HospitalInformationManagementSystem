@@ -34,5 +34,6 @@ namespace HMS.Entity.Models
         public virtual DbSet<Complaint> Complaints { get; set; }
         public virtual DbSet<AppointmentManager> AppointmentManagers { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<Visitor> Visitors { get; set; }
     }
 }
