@@ -106,7 +106,7 @@ namespace HMS.PL
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(267, 27);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "1234";
+            this.txtPassword.Text = "test123";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -120,7 +120,7 @@ namespace HMS.PL
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(267, 27);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.Text = "yohan";
+            this.txtUserName.Text = "Yohan";
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
@@ -197,7 +197,7 @@ namespace HMS.PL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1031, 776);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPassword);

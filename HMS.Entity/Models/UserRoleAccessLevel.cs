@@ -16,7 +16,7 @@ namespace HMS.Entity.Models
     {
         public int Id { get; set; }
         public Nullable<int> UserRoleId { get; set; }
-        public Nullable<int> PageId { get; set; }
+        public string PageName { get; set; }
         public Nullable<bool> AddCommand { get; set; }
         public Nullable<bool> EditCommand { get; set; }
         public Nullable<bool> DeleteCommand { get; set; }

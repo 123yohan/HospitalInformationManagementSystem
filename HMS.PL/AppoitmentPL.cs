@@ -1,5 +1,7 @@
 ﻿using HMS.BLL;
+using HMS.DAL;
 using HMS.Entity.Models;
+using HMS.Models;
 using HMS.Other;
 using System;
 using System.Collections.Generic;
@@ -16,11 +18,51 @@ namespace HMS.PL
     public partial class AppoitmentPL : Form
     {
         AppoitmentBLL appoitmentBLL;
-        int staffId, patientId;
-        public AppoitmentPL()
+        AppointmentReportBLL appointmentReportBLL;
+        int staffId, patientId, AppoitmentId;
+        Func<int> DataLoadMethod;
+        public AppoitmentPL(Func<int> DataLoadMethod,  int AppoimentId)
         {
             InitializeComponent();
             appoitmentBLL = new AppoitmentBLL();
+            appointmentReportBLL = new AppointmentReportBLL();
+            this.DataLoadMethod = DataLoadMethod;
+            PageAccess();
+            if (AppoimentId > 0)
+            {
+                btnSubmit.Text = "UPDATE";
+                btnClear.Visible = false;
+                GetAllAppoiments(AppoimentId);
+            }
+
+        }
+
+        public void PageAccess()
+        {
+            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Patient").FirstOrDefault();
+            if (res != null)
+            {
+                if (res.AddCommand == true)
+                {
+                    btnAddPaitent.Visible = true;
+                }
+
+               
+            }
+
+
+        }
+
+        public void GetAllAppoiments(int AppoimentId)
+        {
+           var app = appointmentReportBLL.GetAllAppointments(AppoimentId).FirstOrDefault();
+            txtPatient.Text = app.PatientName;
+            txtMedical.Text = app.StaffName;
+            dtpAppoinmentTime.Text = app.Time.ToString();
+            dtpAppointmentDate.Text = app.Date.ToString();
+            staffId = app.PatientId;
+            patientId = app.PatientId;
+            AppoitmentId = app.AppoitmentId;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -75,22 +117,48 @@ namespace HMS.PL
                 return;
             }
 
-            var app = new Appointment
+            if (btnSubmit.Text == "SUBMIT")
             {
-                PatientId = patientId,
-                CreatedBy = HMSComman.UserAccId,
-                Active = true,
-                Time =dtpAppoinmentTime.Value,
-                Date = dtpAppointmentDate.Value,
-                CreatedDate = DateTime.Now,
+                var app = new Appointment
+                {
+                    PatientId = patientId,
+                    CreatedBy = HMSComman.UserAccId,
+                    Active = true,
+                    IsApproved = false,
+                    IsCompleted = false,
+                    Time = dtpAppoinmentTime.Value,
+                    Date = dtpAppointmentDate.Value,
+                    CreatedDate = DateTime.Now,
 
-            };
+                };
 
-            if( await appoitmentBLL.AddAppointment(app, staffId) > 0)
-            {
-                MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Clear();
+                if (await appoitmentBLL.AddAppointment(app, staffId) > 0)
+                {
+                    MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Clear();
+                    DataLoadMethod();
+                }
             }
+            else
+            {
+                var app = new appointment
+                {
+                    PatientId = patientId,
+                    Time = dtpAppoinmentTime.Value,
+                    Date = dtpAppointmentDate.Value,
+                    StaffId = staffId,
+                    AppoitmentId = AppoitmentId
+                };
+
+                if (await appoitmentBLL.UpdateAppointment(app) > 0)
+                {
+                    MessageBox.Show("Succesfully Updated", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataLoadMethod();
+                    this.Close();
+                    Clear();
+                }
+            }
+           
 
 
         }
@@ -101,24 +169,12 @@ namespace HMS.PL
             txtPatient.Text = "";
             dtpAppointmentDate.Value = DateTime.Today;
             dtpAppoinmentTime.Value = DateTime.Now;
-
+            staffId = 0;
+            patientId = 0;
+            AppoitmentId = 0;
         }
 
-        private void txtPatient_TextChanged(object sender, EventArgs e)
-        {
-            var res = appoitmentBLL.GetPatients(lstPatient, txtPatient.Text);
-
-            if (res.Items.Count > 0)
-                lstPatient.Visible = true;
-            else
-                lstPatient.Visible = false;
-
-            if (txtMedical.Text.Length <= 0)
-            {
-                lstPatient.Visible = false;
-            }
-        }
-
+     
         private void lstViewStaff_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Up)
@@ -175,6 +231,25 @@ namespace HMS.PL
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void AppoitmentPL_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPatient_TextChanged(object sender, EventArgs e)
+        {
+            var res = appoitmentBLL.GetPatients(lstPatient, txtPatient.Text);
+            if (res.Items.Count > 0)
+                lstPatient.Visible = true;
+            else
+                lstPatient.Visible = false;
+
+            if (txtPatient.Text.Length <= 0)
+            {
+                lstPatient.Visible = false;
+            }
         }
 
         private void lstPatient_KeyDown(object sender, KeyEventArgs e)

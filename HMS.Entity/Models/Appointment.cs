@@ -23,5 +23,7 @@ namespace HMS.Entity.Models
         public Nullable<int> UpdateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public Nullable<bool> Active { get; set; }
+        public Nullable<bool> IsApproved { get; set; }
+        public Nullable<bool> IsCompleted { get; set; }
     }
 }

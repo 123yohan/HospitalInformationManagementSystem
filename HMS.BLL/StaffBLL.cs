@@ -1,5 +1,6 @@
 ﻿using HMS.DAL;
 using HMS.Entity.Models;
+using HMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,21 @@ namespace HMS.BLL
                 dgvEmployee.AutoGenerateColumns = false;
                 dgvEmployee.DataSource = StaffDAL.GetStaffs();
                 return dgvEmployee;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<staff> GetStaffsById(int Id)
+        {
+            try
+            {
+               return  StaffDAL.GetStaffsById(Id);
+                
 
             }
             catch (Exception)
@@ -57,11 +73,11 @@ namespace HMS.BLL
             }
         }
 
-        public int UpdateStaff(Staff staff)
+        public int UpdateStaff(Staff staff, UserAccount userAccount)
         {
             try
             {
-                return StaffDAL.UpdateStaff(staff);
+                return StaffDAL.UpdateStaff(staff, userAccount);
             }
             catch (Exception)
             {

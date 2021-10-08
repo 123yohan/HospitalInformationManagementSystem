@@ -24,7 +24,6 @@ namespace HMS.Entity.Models
         public string Nic { get; set; }
         public string Gender { get; set; }
         public string UserType { get; set; }
-        public Nullable<int> UserRoleId { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<System.DateTime> CreatedDateTime { get; set; }
         public Nullable<bool> Active { get; set; }

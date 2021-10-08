@@ -80,6 +80,9 @@
     <Compile Include="Models\Patient.cs">
       <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Postal.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Staff.cs">
       <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
@@ -90,6 +93,9 @@
       <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\UserRoleAccessLevel.cs">
+      <DependentUpon>HMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Visitor.cs">
       <DependentUpon>HMSDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

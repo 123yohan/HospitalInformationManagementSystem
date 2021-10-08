@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.2, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -43,11 +49,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPostalPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPostalPL.Designer.cs">
+      <DependentUpon>AddPostalPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVisitorsPL.Designer.cs">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Appointment ReportPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Appointment ReportPL.Designer.cs">
+      <DependentUpon>Appointment ReportPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppointmentViewPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppointmentViewPL.Designer.cs">
+      <DependentUpon>AppointmentViewPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppoitmentPL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AppoitmentPL.Designer.cs">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApprovedAppoinmentPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApprovedAppoinmentPL.Designer.cs">
+      <DependentUpon>ApprovedAppoinmentPL.cs</DependentUpon>
     </Compile>
     <Compile Include="ComplaintsAddPL.cs">
       <SubType>Form</SubType>
@@ -55,11 +91,17 @@
     <Compile Include="ComplaintsAddPL.Designer.cs">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
     </Compile>
-    <Compile Include="ComplaintsDetailsPL.cs">
+    <Compile Include="ComplaintsViewPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ComplaintsDetailsPL.Designer.cs">
-      <DependentUpon>ComplaintsDetailsPL.cs</DependentUpon>
+    <Compile Include="ComplaintsViewPL.Designer.cs">
+      <DependentUpon>ComplaintsViewPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteAppoinmentRecordPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteAppoinmentRecordPL.Designer.cs">
+      <DependentUpon>DeleteAppoinmentRecordPL.cs</DependentUpon>
     </Compile>
     <Compile Include="PageConfigPL.cs">
       <SubType>Form</SubType>
@@ -78,6 +120,12 @@
     </Compile>
     <Compile Include="PatientDetailsPL.Designer.cs">
       <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostalViewPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostalViewPL.Designer.cs">
+      <DependentUpon>PostalViewPL.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffDetailsPL.cs">
       <SubType>Form</SubType>
@@ -115,13 +163,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="UserLoginPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserLoginPL.Designer.cs">
+      <DependentUpon>UserLoginPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitorsPL.Designer.cs">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddPostalPL.resx">
+      <DependentUpon>AddPostalPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVisitorsPL.resx">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Appointment ReportPL.resx">
+      <DependentUpon>Appointment ReportPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppointmentViewPL.resx">
+      <DependentUpon>AppointmentViewPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppoitmentPL.resx">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApprovedAppoinmentPL.resx">
+      <DependentUpon>ApprovedAppoinmentPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ComplaintsAddPL.resx">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComplaintsViewPL.resx">
+      <DependentUpon>ComplaintsViewPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteAppoinmentRecordPL.resx">
+      <DependentUpon>DeleteAppoinmentRecordPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PageConfigPL.resx">
       <DependentUpon>PageConfigPL.cs</DependentUpon>
@@ -131,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetailsPL.resx">
       <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostalViewPL.resx">
+      <DependentUpon>PostalViewPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDetailsPL.resx">
       <DependentUpon>StaffDetailsPL.cs</DependentUpon>
@@ -151,6 +235,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLoginPL.resx">
+      <DependentUpon>UserLoginPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitorsPL.resx">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +266,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\Close.png" />
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +313,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-supplier-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-report-card-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-add-new-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-microsoft-to-do-app-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-presentation-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-user-data-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-pdf-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-export-pdf-25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tourist-guide-skin-type-1-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
