@@ -49,6 +49,39 @@ namespace HMS.DAL
             }
 
         }
+        
+        public static List<staff> GetStaffsById(int Id)
+        {
+            try
+            {
+                return (from s in _Con.Staffs
+                        join u in _Con.UserRoles on s.UserRoleId equals u.RoleId
+                        join a in _Con.UserAccounts on s.StaffId equals a.EmployeeId
+                        where a.Status == "Staff" && a.Active == true && s.Active == true && s.StaffId == Id
+                        select new staff
+                        {
+                            StaffId = s.StaffId,
+                            FirstName = s.FirstName,
+                            LastName = s.LastName,
+                            StaffType = s.StaffType,
+                            Address = s.Address,
+                            MobileNo = s.MobileNo,
+                            Nic = s.Nic,
+                            Email = s.Email,
+                            Gender = s.Gender,
+                            UserRoleName = u.Name,
+                            UserName = a.Username,
+                            Active = s.Active,
+                            CreatedDateTime = s.CreatedDateTime
+                            
+                        }).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
 
         public static int NewStaff(Staff staff, UserAccount userAccount)
         {

@@ -17,6 +17,11 @@ namespace HMS.DAL
             return _Con.Visitors.Where(x => x.Active == true).ToList();
         }
 
+        public static List<Visitor> GetVisitors(int Id)
+        {
+            return _Con.Visitors.Where(x => x.Active == true && x.Id == Id).ToList();
+        }
+
         public static int AddVisitor(Visitor visitor)
         {
             try
@@ -46,9 +51,11 @@ namespace HMS.DAL
                     vis.MobileNo = visitor.MobileNo;
                     vis.Note = visitor.Note;
                     vis.Purpose = visitor.Purpose;
+
+                    return _Con.SaveChanges();
                 }
 
-                return _Con.SaveChanges();
+                return 0;
             }
             catch (Exception)
             {
