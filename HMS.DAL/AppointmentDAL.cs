@@ -37,12 +37,12 @@ namespace HMS.DAL
         {
             if (string.IsNullOrWhiteSpace(Name))
             {
-                return _Con.Staffs.Where(x => x.StaffType == "Doctor").ToList();
+                return _Con.Staffs.Where(x => x.StaffType == "Medical Officer").ToList();
             }
 
             var staffCollection = _Con.Staffs as IQueryable<Staff>;
 
-            staffCollection = staffCollection.Where(x => x.StaffType == "Doctor");
+            staffCollection = staffCollection.Where(x => x.StaffType == "Medical Officer");
 
 
             if (!string.IsNullOrWhiteSpace(Name))

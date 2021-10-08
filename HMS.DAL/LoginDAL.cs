@@ -6,12 +6,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 namespace HMS.DAL
 {
    public class LoginDAL
     {
         private static readonly UOVT_HIMSEntities _Con = new UOVT_HIMSEntities();
+
+       public static ObservableCollection<UserRoleAccessLevel> lstUserRole = new ObservableCollection<UserRoleAccessLevel>();
 
         public static int Login(UserAccount userAccount)
         {
@@ -27,6 +30,7 @@ namespace HMS.DAL
                 if (isPassword)
                 {
                     HMSComman.UserAccId = res.UserId;
+                    GetPageAccess(res.UserRoleId);
                     return 1;
                 }
                 else
@@ -34,6 +38,26 @@ namespace HMS.DAL
                     return -2;
                 }
             }
+        }
+
+        public static ObservableCollection<UserRoleAccessLevel> GetPageAccess(int? UserRoleId)
+        {
+          var res = _Con.UserRoleAccessLevels.Where(x => x.UserRoleId == UserRoleId).ToList();
+            foreach(var item in res)
+            {
+                var userrole = new UserRoleAccessLevel
+                {
+                    PageName = item.PageName,
+                    AddCommand = item.AddCommand,
+                    EditCommand = item.EditCommand,
+                    DeleteCommand = item.DeleteCommand,
+                    ReadCommand = item.ReadCommand
+                };
+
+                lstUserRole.Add(userrole);
+            }
+
+            return lstUserRole;
         }
     }
 }

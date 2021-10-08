@@ -19,12 +19,12 @@ namespace HMS.Entity.Models
         public string Address { get; set; }
         public string Nic { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<System.TimeSpan> InTime { get; set; }
-        public Nullable<System.TimeSpan> OutTime { get; set; }
+        public Nullable<System.DateTime> InTime { get; set; }
+        public string MobileNo { get; set; }
+        public Nullable<System.DateTime> OutTime { get; set; }
         public string Purpose { get; set; }
         public string Note { get; set; }
         public Nullable<int> CreatedBy { get; set; }
         public Nullable<bool> Active { get; set; }
-        public string MobileNo { get; set; }
     }
 }

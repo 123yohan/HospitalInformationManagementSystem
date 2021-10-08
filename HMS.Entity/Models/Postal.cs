@@ -12,16 +12,17 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UserRoleAccessLevel
+    public partial class Postal
     {
         public int Id { get; set; }
-        public Nullable<int> UserRoleId { get; set; }
-        public string PageName { get; set; }
-        public Nullable<bool> AddCommand { get; set; }
-        public Nullable<bool> EditCommand { get; set; }
-        public Nullable<bool> DeleteCommand { get; set; }
-        public Nullable<bool> ReadCommand { get; set; }
-        public Nullable<int> CreatedBy { get; set; }
+        public string ToName { get; set; }
+        public string FromName { get; set; }
+        public string ReferenceNo { get; set; }
+        public string ToAddress { get; set; }
+        public string FromAddress { get; set; }
+        public string Note { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
+        public Nullable<bool> IsReceivedMail { get; set; }
+        public Nullable<bool> IsDelete { get; set; }
     }
 }

@@ -45,8 +45,10 @@
     <Compile Include="AppointmentReportBLL.cs" />
     <Compile Include="AppoitmentBLL.cs" />
     <Compile Include="ComplainBLL.cs" />
+    <Compile Include="PostalBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StaffBLL.cs" />
+    <Compile Include="UserRoleAccessLevelsBLL.cs" />
     <Compile Include="VisitorsBLL.cs" />
   </ItemGroup>
   <ItemGroup>

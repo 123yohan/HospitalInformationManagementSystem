@@ -36,71 +36,20 @@ namespace HMS.PL
             this.Close();
         }
 
-        private void txtstaff_TextChanged(object sender, EventArgs e)
-        {
+       
+    
 
-            var res = complainBLL.GetStaff(lstViewStaff, txtstaff.Text);
-            if (res.Items.Count > 0)
-                lstViewStaff.Visible = true;
-            else
-                lstViewStaff.Visible = false;
-
-            if (txtstaff.Text.Length <= 0)
-            {
-                lstViewStaff.Visible = false;
-            }
-        }
-
-        private void txtstaff_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Down)
-            {
-                if (lstViewStaff.Items.Count > 0)
-                {
-                    lstViewStaff.Focus();
-                    lstViewStaff.Items[0].Selected = true;
-
-                }
-            }
-        }
-
-        private void lstViewStaff_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Up)
-            {
-                if (lstViewStaff.Items[0].Selected == true)
-                {
-                    txtstaff.Focus();
-
-                }
-            }
-            if (e.KeyCode == Keys.Enter)
-            {
-                staffId = Convert.ToInt32(lstViewStaff.SelectedItems[0].SubItems[0].Text);
-                txtstaff.Text = lstViewStaff.SelectedItems[0].SubItems[1].Text;
-                lstViewStaff.Items.Clear();
-                lstViewStaff.Visible = false;
-
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                lstViewStaff.Hide();
-                txtstaff.Text = "";
-                txtstaff.Focus();
-
-            }
-        }
+     
 
         private async void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (staffId <= 0)
-            {
-                MessageBox.Show("Please Select Staff Member", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtstaff.Focus();
-                return;
+            //if (staffId <= 0)
+            //{
+            //    MessageBox.Show("Please Select Staff Member", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
 
-            }
-            else if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            //}
+             if (string.IsNullOrWhiteSpace(txtDescription.Text))
             {
                 MessageBox.Show("Please Enter Complain Description", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txtDescription.Focus();
@@ -116,7 +65,7 @@ namespace HMS.PL
                     Status = 1,
                     CreatedBy = HMSComman.UserAccId,
                     CreatedDate = DateTime.Now,
-                    Date = dtpDate.Value,
+                    Date = DateTime.Now,
                     Type = "",
                     AttachFiles = fileContent
                 };
@@ -133,8 +82,7 @@ namespace HMS.PL
         {
             txtDescription.Text = "";
             txtMobileNo.Text = "";
-            txtstaff.Text = "";
-            dtpDate.Value = DateTime.Now;
+           
             cmbType.SelectedIndex = -1;
         }
 
@@ -175,6 +123,11 @@ namespace HMS.PL
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void ComplaintsAddPL_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

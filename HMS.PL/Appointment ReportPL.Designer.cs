@@ -44,11 +44,11 @@ namespace HMS.PL
             this.cmbStaff = new System.Windows.Forms.ComboBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.dgvAppointmentReport = new System.Windows.Forms.DataGridView();
-            this.chkAll = new System.Windows.Forms.CheckBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chkAll = new System.Windows.Forms.CheckBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAppointmentReport)).BeginInit();
             this.SuspendLayout();
             // 
@@ -163,41 +163,13 @@ namespace HMS.PL
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAppointmentReport.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvAppointmentReport.Location = new System.Drawing.Point(16, 134);
+            this.dgvAppointmentReport.Location = new System.Drawing.Point(30, 134);
             this.dgvAppointmentReport.Name = "dgvAppointmentReport";
             this.dgvAppointmentReport.ReadOnly = true;
             this.dgvAppointmentReport.RowHeadersVisible = false;
             this.dgvAppointmentReport.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAppointmentReport.Size = new System.Drawing.Size(986, 342);
+            this.dgvAppointmentReport.Size = new System.Drawing.Size(956, 342);
             this.dgvAppointmentReport.TabIndex = 18;
-            // 
-            // chkAll
-            // 
-            this.chkAll.AutoSize = true;
-            this.chkAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkAll.ForeColor = System.Drawing.Color.Gray;
-            this.chkAll.Location = new System.Drawing.Point(818, 85);
-            this.chkAll.Name = "chkAll";
-            this.chkAll.Size = new System.Drawing.Size(44, 22);
-            this.chkAll.TabIndex = 19;
-            this.chkAll.Text = "All";
-            this.chkAll.UseVisualStyleBackColor = true;
-            // 
-            // btnSubmit
-            // 
-            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnSubmit.FlatAppearance.BorderSize = 2;
-            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(885, 83);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(117, 27);
-            this.btnSubmit.TabIndex = 23;
-            this.btnSubmit.Text = "SUBMIT";
-            this.btnSubmit.UseVisualStyleBackColor = false;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // Column1
             // 
@@ -228,6 +200,34 @@ namespace HMS.PL
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             this.Column3.Width = 200;
+            // 
+            // chkAll
+            // 
+            this.chkAll.AutoSize = true;
+            this.chkAll.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAll.ForeColor = System.Drawing.Color.Gray;
+            this.chkAll.Location = new System.Drawing.Point(818, 85);
+            this.chkAll.Name = "chkAll";
+            this.chkAll.Size = new System.Drawing.Size(44, 22);
+            this.chkAll.TabIndex = 19;
+            this.chkAll.Text = "All";
+            this.chkAll.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmit
+            // 
+            this.btnSubmit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSubmit.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnSubmit.FlatAppearance.BorderSize = 2;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSubmit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.White;
+            this.btnSubmit.Location = new System.Drawing.Point(885, 83);
+            this.btnSubmit.Name = "btnSubmit";
+            this.btnSubmit.Size = new System.Drawing.Size(117, 27);
+            this.btnSubmit.TabIndex = 23;
+            this.btnSubmit.Text = "SUBMIT";
+            this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // Appointment_ReportPL
             // 

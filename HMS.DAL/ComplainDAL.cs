@@ -32,6 +32,45 @@ namespace HMS.DAL
 
         }
 
+        public static List<complaints> GetComplaints()
+        {
+            return (from c in _Con.Complaints
+                     
+                    join p in _Con.Patients on c.CreatedBy equals p.PatientId
+                    select new complaints
+                    {
+                        ComplainId = c.ComplainId,
+                       
+                        PatientName = p.FirstName + "" + p.LastName,
+                      //  StaffName = _Con.Staffs.Where(x=>x.StaffId == c.StaffId && x.Active == true).FirstOrDefault() == null ? " " : .FirstName + "" + s.LastName,
+                        MobileNo = c.MobileNo,
+                        Complaint = c.Decription,
+                        Action = c.Action,
+                        CreatedDate = c.CreatedDate,
+                        UpdateDate = c.UpdateDate
+                    }).ToList();
+        }
+
+        public static List<complaints> GetComplaints(int PId)
+        {
+            return (from c in _Con.Complaints
+                    join s in _Con.Staffs on c.StaffId equals s.StaffId
+                    join p in _Con.Patients on c.CreatedBy equals p.PatientId
+                    where(c.CreatedBy == PId)
+                    select new complaints
+                    {
+                        ComplainId = c.ComplainId,
+                        StaffId = s.StaffId,
+                        PatientName = p.FirstName + "" + p.LastName,
+                        StaffName = s.FirstName + "" + s.LastName,
+                        MobileNo = s.MobileNo,
+                        Complaint = c.Decription,
+                        Action = c.Action,
+                        CreatedDate = c.CreatedDate,
+                        UpdateDate = c.UpdateDate
+                    }).ToList();
+        }
+
         public static async Task<int> AddComplain(Complaint complaint)
         {
             _Con.Complaints.Add(complaint);

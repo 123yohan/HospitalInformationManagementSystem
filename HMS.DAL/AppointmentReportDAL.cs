@@ -14,7 +14,7 @@ namespace HMS.DAL
 
         public static List<Staff> GetStaff()
         {
-            return _Con.Staffs.Where(x => x.StaffType == "Doctor").ToList();
+            return _Con.Staffs.Where(x => x.StaffType == "Medical Officer").ToList();
         }
 
          

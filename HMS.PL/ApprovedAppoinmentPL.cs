@@ -1,4 +1,5 @@
 ﻿using HMS.BLL;
+using HMS.DAL;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using System;
@@ -24,6 +25,21 @@ namespace HMS.PL
             appoitmentBLL = new AppoitmentBLL();
             AppointmentReportBLL = new AppointmentReportBLL();
             AppointmentReportBLL.GetApprovedAppointments(dgvAppointmentReport);
+            PageAccess();
+        }
+
+        public void PageAccess()
+        {
+            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Approved Appointment").FirstOrDefault();
+            if (res != null)
+            {
+                if (res.AddCommand == true)
+                {
+                    btnpdf.Visible = true;
+                    dgvAppointmentReport.Columns[5].Visible = true;
+                }
+
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -105,6 +121,7 @@ namespace HMS.PL
                         try
 
                         {
+                           
 
                             PdfPTable pTable = new PdfPTable(dgvAppointmentReport.Columns.Count);
 
@@ -113,6 +130,8 @@ namespace HMS.PL
                             pTable.WidthPercentage = 100;
 
                             pTable.HorizontalAlignment = Element.ALIGN_LEFT;
+
+                            
 
                             foreach (DataGridViewColumn col in dgvAppointmentReport.Columns)
 
@@ -129,7 +148,7 @@ namespace HMS.PL
                             {
                                 foreach (DataGridViewCell cell in row.Cells)
                                 {
-                                    pTable.AddCell(cell.Value.ToString());
+                                    pTable.AddCell(cell.Value==null?"":cell.Value.ToString());
                                 }
                             }
                   
@@ -145,6 +164,7 @@ namespace HMS.PL
 
                                 document.Open();
 
+                              
                                 document.Add(pTable);
 
                                 document.Close();

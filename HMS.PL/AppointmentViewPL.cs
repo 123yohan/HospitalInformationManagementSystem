@@ -1,4 +1,5 @@
 ﻿using HMS.BLL;
+using HMS.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +22,37 @@ namespace HMS.PL
             appointmentReportBLL = new BLL.AppointmentReportBLL();
 
             appoitmentBLL = new AppoitmentBLL();
+            LoadGridView();
+            PageAccess();
+        }
+        public int LoadGridView()
+        {
             appointmentReportBLL.GetAllAppointments(dgvAppointmentReport);
+            return 0;
+        }
+
+        public void PageAccess()
+        {
+            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Appointment").FirstOrDefault();
+            if (res != null)
+            {
+                if (res.AddCommand == true)
+                {
+                    btnAddAppoiment.Visible = true;
+                }
+
+                if (res.EditCommand == true)
+                {
+                    dgvAppointmentReport.Columns[0].Visible = true;
+                }
+
+                if (res.DeleteCommand == true)
+                {
+                    dgvAppointmentReport.Columns[7].Visible = true;
+                }
+            }
+
+         
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -53,7 +84,7 @@ namespace HMS.PL
                     return;
                 }
             }
-            Form frm = new AppoitmentPL(0);
+            Form frm = new AppoitmentPL(LoadGridView, 0);
             frm.MdiParent = MasterForm.ActiveForm;
             frm.Show();
         }
@@ -92,7 +123,7 @@ namespace HMS.PL
                 }
 
                 int AppoimentId = Convert.ToInt32(dgvAppointmentReport.Rows[e.RowIndex].Cells[8].Value);
-                Form frm = new AppoitmentPL(AppoimentId);
+                Form frm = new AppoitmentPL(LoadGridView,AppoimentId);
                 frm.MdiParent = MasterForm.ActiveForm;
                 frm.Show();
 

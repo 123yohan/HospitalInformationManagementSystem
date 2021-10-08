@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HMS.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -102,7 +103,63 @@ namespace HMS.PL
                     break;
                 }
             }
+
+            CheckPageAccess();
+
+
+        }
+
+        public void CheckPageAccess()
+        {
+            foreach(var item in LoginDAL.lstUserRole)
+            {
+                if(item.PageName == "Staff")
+                {
+                    button2.Visible = true;
+                }
+                else if(item.PageName == "Patient")
+                {
+                    btnPatient.Visible = true;
+                }
+                else if (item.PageName == "Visitors")
+                {
+                    btnVisitors.Visible = true;
+                }
+                else if (item.PageName == "Complatine")
+                {
+                    btnComplatine.Visible = true;
+                }
+                else if (item.PageName == "Appointment")
+                {
+                    bnappointment.Visible = true;
+                }
+                else if (item.PageName == "Approved Appointment")
+                {
+                    button3.Visible = true;
+                }
+                else if (item.PageName == "Appointment Report")
+                {
+                    btnAppointmentReport.Visible = true;
+                }
+                else if (item.PageName == "Delelete Appointment")
+                {
+                    btnDletedAppointment.Visible = true;
+                }
+                else if (item.PageName == "Page Config")
+                {
+                    btnPc.Visible = true;
+                }
+                else if (item.PageName == "User Log Report")
+                {
+                    btnUserLog.Visible = true;
+                }
+                else if (item.PageName == "Postal")
+                {
+                    btnPostal.Visible = true;
+                }
+            }
            
+                
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -162,13 +219,13 @@ namespace HMS.PL
 
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(ComplaintsAddPL))
+                if (f.GetType() == typeof(ComplaintsViewPL))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form frm = new ComplaintsAddPL();
+            Form frm = new ComplaintsViewPL();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -339,6 +396,21 @@ namespace HMS.PL
                 }
             }
             Form frm = new VisitorsPL();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPostal_Click(object sender, EventArgs e)
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == typeof(PostalViewPL))
+                {
+                    f.Activate();
+                    return;
+                }
+            }
+            Form frm = new PostalViewPL();
             frm.MdiParent = this;
             frm.Show();
         }

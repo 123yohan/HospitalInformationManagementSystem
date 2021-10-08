@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace HMS.BLL
 {
-    class VisitorsBLL
+   public class VisitorsBLL
     {
         public DataGridView GetVisitors(DataGridView dgv)
         {
@@ -19,6 +19,14 @@ namespace HMS.BLL
             dgv.Columns[9].DefaultCellStyle.Format = "h: mm tt";
             dgv.Columns[10].DefaultCellStyle.Format = "h: mm tt";
             return dgv;
+        }
+
+
+        public List<Visitor> GetVisitors(int Id)
+        {
+            
+            return VisitorsDAL.GetVisitors(Id);
+            
         }
 
         public  int AddVisitor(Visitor visitor)

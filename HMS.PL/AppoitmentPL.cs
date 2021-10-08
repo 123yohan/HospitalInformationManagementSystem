@@ -1,4 +1,5 @@
 ﻿using HMS.BLL;
+using HMS.DAL;
 using HMS.Entity.Models;
 using HMS.Models;
 using HMS.Other;
@@ -19,18 +20,36 @@ namespace HMS.PL
         AppoitmentBLL appoitmentBLL;
         AppointmentReportBLL appointmentReportBLL;
         int staffId, patientId, AppoitmentId;
-        public AppoitmentPL(int AppoimentId)
+        Func<int> DataLoadMethod;
+        public AppoitmentPL(Func<int> DataLoadMethod,  int AppoimentId)
         {
             InitializeComponent();
             appoitmentBLL = new AppoitmentBLL();
             appointmentReportBLL = new AppointmentReportBLL();
-
-            if(AppoimentId > 0)
+            this.DataLoadMethod = DataLoadMethod;
+            PageAccess();
+            if (AppoimentId > 0)
             {
                 btnSubmit.Text = "UPDATE";
                 btnClear.Visible = false;
                 GetAllAppoiments(AppoimentId);
             }
+
+        }
+
+        public void PageAccess()
+        {
+            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Patient").FirstOrDefault();
+            if (res != null)
+            {
+                if (res.AddCommand == true)
+                {
+                    btnAddPaitent.Visible = true;
+                }
+
+               
+            }
+
 
         }
 
@@ -117,6 +136,7 @@ namespace HMS.PL
                 {
                     MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Clear();
+                    DataLoadMethod();
                 }
             }
             else
@@ -133,6 +153,7 @@ namespace HMS.PL
                 if (await appoitmentBLL.UpdateAppointment(app) > 0)
                 {
                     MessageBox.Show("Succesfully Updated", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DataLoadMethod();
                     this.Close();
                     Clear();
                 }
@@ -210,6 +231,11 @@ namespace HMS.PL
         private void btnClear_Click(object sender, EventArgs e)
         {
             Clear();
+        }
+
+        private void AppoitmentPL_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void txtPatient_TextChanged(object sender, EventArgs e)

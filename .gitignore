@@ -361,3 +361,13 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/HMS.PL/Form1.cs
+/HMS.PL/Form1.Designer.cs
+/HMS.PL/AddPostalPL.cs
+/HMS.PL/AddPostalPL.Designer.cs
+/HMS.PL/AddVisitorsPL.cs
+/HMS.PL/AddVisitorsPL.Designer.cs
+/HMS.PL/AddVisitorsPL.resx
+/HMS.PL/PostalViewPL.cs
+/HMS.PL/PostalViewPL.Designer.cs
+/HMS.PL/PostalViewPL.resx

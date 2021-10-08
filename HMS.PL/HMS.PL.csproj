@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddPostalPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddPostalPL.Designer.cs">
+      <DependentUpon>AddPostalPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddVisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVisitorsPL.Designer.cs">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment ReportPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +91,12 @@
     <Compile Include="ComplaintsAddPL.Designer.cs">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
     </Compile>
+    <Compile Include="ComplaintsViewPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplaintsViewPL.Designer.cs">
+      <DependentUpon>ComplaintsViewPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="DeleteAppoinmentRecordPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +120,12 @@
     </Compile>
     <Compile Include="PatientDetailsPL.Designer.cs">
       <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PostalViewPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PostalViewPL.Designer.cs">
+      <DependentUpon>PostalViewPL.cs</DependentUpon>
     </Compile>
     <Compile Include="StaffDetailsPL.cs">
       <SubType>Form</SubType>
@@ -147,6 +171,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddPostalPL.resx">
+      <DependentUpon>AddPostalPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddVisitorsPL.resx">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Appointment ReportPL.resx">
       <DependentUpon>Appointment ReportPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +192,9 @@
     <EmbeddedResource Include="ComplaintsAddPL.resx">
       <DependentUpon>ComplaintsAddPL.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ComplaintsViewPL.resx">
+      <DependentUpon>ComplaintsViewPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DeleteAppoinmentRecordPL.resx">
       <DependentUpon>DeleteAppoinmentRecordPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PatientDetailsPL.resx">
       <DependentUpon>PatientDetailsPL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PostalViewPL.resx">
+      <DependentUpon>PostalViewPL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StaffDetailsPL.resx">
       <DependentUpon>StaffDetailsPL.cs</DependentUpon>
@@ -292,6 +328,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-tourist-guide-skin-type-1-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -72,11 +72,12 @@ namespace HMS.PL
             this.btnAddAppoiment.FlatAppearance.BorderSize = 0;
             this.btnAddAppoiment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddAppoiment.Image = global::HMS.PL.Properties.Resources.icons8_add_new_30;
-            this.btnAddAppoiment.Location = new System.Drawing.Point(19, 47);
+            this.btnAddAppoiment.Location = new System.Drawing.Point(207, 3);
             this.btnAddAppoiment.Name = "btnAddAppoiment";
             this.btnAddAppoiment.Size = new System.Drawing.Size(31, 32);
             this.btnAddAppoiment.TabIndex = 11;
             this.btnAddAppoiment.UseVisualStyleBackColor = true;
+            this.btnAddAppoiment.Visible = false;
             this.btnAddAppoiment.Click += new System.EventHandler(this.btnAddAppoiment_Click);
             // 
             // btnExit
@@ -85,7 +86,7 @@ namespace HMS.PL
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(1222, 2);
+            this.btnExit.Location = new System.Drawing.Point(1083, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(41, 35);
             this.btnExit.TabIndex = 10;
@@ -125,7 +126,7 @@ namespace HMS.PL
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Desktop;
             dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAppointmentReport.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvAppointmentReport.Location = new System.Drawing.Point(19, 85);
+            this.dgvAppointmentReport.Location = new System.Drawing.Point(18, 53);
             this.dgvAppointmentReport.MultiSelect = false;
             this.dgvAppointmentReport.Name = "dgvAppointmentReport";
             this.dgvAppointmentReport.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -139,7 +140,7 @@ namespace HMS.PL
             this.dgvAppointmentReport.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvAppointmentReport.RowHeadersVisible = false;
             this.dgvAppointmentReport.RowHeadersWidth = 50;
-            this.dgvAppointmentReport.Size = new System.Drawing.Size(1229, 398);
+            this.dgvAppointmentReport.Size = new System.Drawing.Size(1089, 430);
             this.dgvAppointmentReport.TabIndex = 19;
             this.dgvAppointmentReport.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointmentReport_CellClick);
             this.dgvAppointmentReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAppointmentReport_CellContentClick);
@@ -159,6 +160,7 @@ namespace HMS.PL
             this.Edite.Text = "EDITE";
             this.Edite.ToolTipText = "Edite";
             this.Edite.UseColumnTextForButtonValue = true;
+            this.Edite.Visible = false;
             this.Edite.Width = 80;
             // 
             // Column5
@@ -232,6 +234,7 @@ namespace HMS.PL
             this.DELETE.Text = "DELETE";
             this.DELETE.ToolTipText = "DELETE";
             this.DELETE.UseColumnTextForButtonValue = true;
+            this.DELETE.Visible = false;
             this.DELETE.Width = 80;
             // 
             // Column4
@@ -246,7 +249,7 @@ namespace HMS.PL
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(1266, 506);
+            this.ClientSize = new System.Drawing.Size(1127, 506);
             this.Controls.Add(this.dgvAppointmentReport);
             this.Controls.Add(this.btnAddAppoiment);
             this.Controls.Add(this.btnExit);

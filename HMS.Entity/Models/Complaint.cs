@@ -19,7 +19,7 @@ namespace HMS.Entity.Models
         public string Type { get; set; }
         public string MobileNo { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Action { get; set; }
+        public string Action { get; set; }
         public string AttachFiles { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<int> CreatedBy { get; set; }
