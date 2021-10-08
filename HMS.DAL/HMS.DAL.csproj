@@ -37,6 +37,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Scrypt, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Scrypt.NET.1.3.0\lib\net20\Scrypt.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -53,13 +56,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EmployeeDAL.cs" />
+    <Compile Include="AppointmentDAL.cs" />
+    <Compile Include="AppointmentReportDAL.cs" />
+    <Compile Include="ComplainDAL.cs" />
+    <Compile Include="LoginDAL.cs" />
+    <Compile Include="PostalDAL.cs" />
+    <Compile Include="StaffDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRoleAccessLevelsDAL.cs" />
+    <Compile Include="VisitorsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HMS.Entity\HMS.Entity.csproj">
-      <Project>{53B46231-3070-4C11-B577-E7A10BFF7293}</Project>
+      <Project>{191F9BF2-6D45-4FA6-AE6D-8F5CD57A451D}</Project>
       <Name>HMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HMS.Models\HMS.Models.csproj">
+      <Project>{D932C08F-F408-4F5F-8A27-DB7D36B359D3}</Project>
+      <Name>HMS.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\HMS.Other\HMS.Other.csproj">
       <Project>{BB144531-FDB6-4715-960F-CC00A78F93B6}</Project>

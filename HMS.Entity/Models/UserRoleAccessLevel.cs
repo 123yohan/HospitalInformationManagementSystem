@@ -12,15 +12,16 @@ namespace HMS.Entity.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class TblEmployee
+    public partial class UserRoleAccessLevel
     {
-        public int EmpId { get; set; }
-        public Nullable<int> UserGroupId { get; set; }
-        public string EmpName { get; set; }
-        public string EmpAddress { get; set; }
-        public string EmpContactNo { get; set; }
-        public string EmpGender { get; set; }
-        public Nullable<bool> Active { get; set; }
-        public Nullable<System.DateTime> CreatedDateTime { get; set; }
+        public int Id { get; set; }
+        public Nullable<int> UserRoleId { get; set; }
+        public string PageName { get; set; }
+        public Nullable<bool> AddCommand { get; set; }
+        public Nullable<bool> EditCommand { get; set; }
+        public Nullable<bool> DeleteCommand { get; set; }
+        public Nullable<bool> ReadCommand { get; set; }
+        public Nullable<int> CreatedBy { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
     }
 }

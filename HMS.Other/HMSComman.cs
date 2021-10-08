@@ -8,5 +8,7 @@ namespace HMS.Other
 {
     public static class HMSComman
     {
+        public static int UserAccId;
+        public static string PageName;
     }
 }

@@ -14,13 +14,13 @@ namespace HMS.Entity.Models
     
     public partial class UserAccount
     {
-        public int UserAccId { get; set; }
-        public int EmpId { get; set; }
-        public string UserName { get; set; }
+        public int UserId { get; set; }
+        public Nullable<int> EmployeeId { get; set; }
+        public string Username { get; set; }
         public string Password { get; set; }
-        public int UserType { get; set; }
-        public Nullable<System.DateTime> CreatedDate { get; set; }
-        public Nullable<System.DateTime> UpdatedDate { get; set; }
         public Nullable<bool> Active { get; set; }
+        public Nullable<System.DateTime> CreatedDate { get; set; }
+        public string Status { get; set; }
+        public Nullable<int> UserRoleId { get; set; }
     }
 }
