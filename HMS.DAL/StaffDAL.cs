@@ -22,9 +22,42 @@ namespace HMS.DAL
             try
             {
                 return (from s in _Con.Staffs
-                        join u in _Con.UserRoles on s.UserRoleId equals u.RoleId
                         join a in _Con.UserAccounts on s.StaffId equals a.EmployeeId
+                        join u in _Con.UserRoles on a.UserRoleId equals u.RoleId
                         where a.Status == "Staff" && a.Active == true && s.Active == true
+                        select new staff
+                        {
+                            StaffId = s.StaffId,
+                            FirstName = s.FirstName,
+                            LastName = s.LastName,
+                            StaffType = s.StaffType,
+                            Address = s.Address,
+                            MobileNo = s.MobileNo,
+                            Nic = s.Nic,
+                            Email = s.Email,
+                            Gender = s.Gender,
+                            UserRoleName = u.Name,
+                            UserName = a.Username,
+                            Active = s.Active,
+                            CreatedDateTime = s.CreatedDateTime
+                            
+                        }).ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+        
+        public static List<staff> GetStaffsById(int Id)
+        {
+            try
+            {
+                return (from s in _Con.Staffs
+                        join a in _Con.UserAccounts on s.StaffId equals a.EmployeeId
+                        join u in _Con.UserRoles on a.UserRoleId equals u.RoleId
+                        where a.Status == "Staff" && a.Active == true && s.Active == true && s.StaffId == Id
                         select new staff
                         {
                             StaffId = s.StaffId,
@@ -79,7 +112,7 @@ namespace HMS.DAL
             return Result;
         }
 
-        public static int UpdateStaff(Staff staff)
+        public static int UpdateStaff(Staff staff, UserAccount userAccount)
         {
             try
             {
@@ -98,7 +131,14 @@ namespace HMS.DAL
                     res.MobileNo = staff.MobileNo;
                     res.Nic = staff.Nic;
                     res.Email = staff.Email;
-                    res.UserRoleId = staff.UserRoleId;
+                   
+
+                    var res2 = _Con.UserAccounts.Where(x => x.EmployeeId == staff.StaffId).FirstOrDefault();
+                    if(res2 != null)
+                    {
+                        res2.Password = userAccount.Password;
+                        res2.UserRoleId = userAccount.UserRoleId;
+                    }
 
                     Result = _Con.SaveChanges();
                 }
@@ -118,6 +158,12 @@ namespace HMS.DAL
             {
                 var res = _Con.Staffs.Find(StaffId);
                 res.Active = false;
+
+                var res2 = _Con.UserAccounts.Where(x=>x.EmployeeId == StaffId).FirstOrDefault();
+                if(res2 != null)
+                {
+                    res2.Active = false;
+                }
                 Result = _Con.SaveChanges();
 
             }

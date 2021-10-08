@@ -57,10 +57,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppointmentDAL.cs" />
+    <Compile Include="AppointmentReportDAL.cs" />
     <Compile Include="ComplainDAL.cs" />
     <Compile Include="LoginDAL.cs" />
+    <Compile Include="PostalDAL.cs" />
     <Compile Include="StaffDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRoleAccessLevelsDAL.cs" />
+    <Compile Include="VisitorsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\HMS.Entity\HMS.Entity.csproj">

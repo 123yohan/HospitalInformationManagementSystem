@@ -101,6 +101,10 @@ namespace HMS.PL
             this.comboBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox3.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "Receptionist",
+            "Medical Officer",
+            "Patient"});
             this.comboBox3.Location = new System.Drawing.Point(428, 198);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(190, 23);
@@ -227,6 +231,7 @@ namespace HMS.PL
             this.button1.TabIndex = 21;
             this.button1.Text = "SUBMIT";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label6
             // 

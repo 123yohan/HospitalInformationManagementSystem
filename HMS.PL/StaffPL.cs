@@ -17,7 +17,8 @@ namespace HMS.PL
     {
         StaffBLL staffBLL;
         Func<int> DataLoadMethod;
-        public StaffPL(Func<int> DataLoadMethod)
+        int StaffId;
+        public StaffPL(Func<int> DataLoadMethod, int Id)
         {
             InitializeComponent();
             staffBLL = new StaffBLL();
@@ -25,6 +26,32 @@ namespace HMS.PL
             cmbUserRole.SelectedIndex = -1;
 
             this.DataLoadMethod = DataLoadMethod;
+
+            if (Id > 0)
+            {
+                StaffId = Id;
+                btnSubmit.Text = "UPDATE";
+                btnClear.Visible = false;
+                GetAllStaffById(Id);
+            }
+        }
+
+        public void GetAllStaffById(int Id)
+        {
+          var res =  staffBLL.GetStaffsById(Id).FirstOrDefault();
+            if(res != null)
+            {
+                txtFirstName.Text = res.FirstName;
+                txtLastName.Text = res.LastName;
+                txtAddress.Text = res.Address;
+                txtMobileNo.Text = res.MobileNo;
+                txtEmail.Text = res.Email;
+                txtNic.Text = res.Nic;
+                txtUserName.Text = res.UserName;
+                cmbGender.SelectedItem = res.Gender;
+                cmbUserRole.Text = res.UserRoleName;
+                cmbUserType.SelectedItem = res.StaffType;
+            }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -92,17 +119,37 @@ namespace HMS.PL
             }
             else
             {
-                if (AddStaff() == 99)
+
+                if(btnSubmit.Text == "SUBMIT")
                 {
-                    MessageBox.Show("Nic or Email Already Exist", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    if (AddStaff() == 99)
+                    {
+                        MessageBox.Show("Nic or Email Already Exist", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                        DataLoadMethod();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
-                    DataLoadMethod();
+                    if (UpdateStaff() == 99)
+                    {
+                        MessageBox.Show("Nic or Email Already Exist", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Succesfully Updated", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Clear();
+                        DataLoadMethod();
+                    }
                 }
+
+                
             }
 
            
@@ -119,7 +166,7 @@ namespace HMS.PL
                 MobileNo = txtMobileNo.Text,
                 Email = txtEmail.Text,
                 Gender = cmbGender.Text,
-                UserRoleId =Convert.ToInt32( cmbUserRole.SelectedValue.ToString()),
+               
                 StaffType = cmbUserType.Text,
                 CreatedBy = HMSComman.UserAccId,
                 CreatedDateTime = DateTime.Now,
@@ -133,10 +180,46 @@ namespace HMS.PL
                 Password = txtPassword.Text.Trim(),
                 Status = "Staff",
                 CreatedDate = DateTime.Now,
-                Active = true
+                Active = true,
+                UserRoleId = Convert.ToInt32(cmbUserRole.SelectedValue.ToString()),
             };
 
            return staffBLL.AddStaff(res, userAccount);
+        }
+
+
+        public int UpdateStaff()
+        {
+            var res = new Staff
+            {
+                StaffId = StaffId,
+                FirstName = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                Address = txtAddress.Text,
+                Nic = txtNic.Text,
+                MobileNo = txtMobileNo.Text,
+                Email = txtEmail.Text,
+                Gender = cmbGender.Text,
+               
+                StaffType = cmbUserType.Text,
+                CreatedBy = HMSComman.UserAccId,
+                CreatedDateTime = DateTime.Now,
+                
+                Active = true
+
+            };
+
+            var userAccount = new UserAccount
+            {
+                Username = txtUserName.Text.Trim(),
+                Password = txtPassword.Text.Trim(),
+                Status = "Staff",
+                CreatedDate = DateTime.Now,
+                Active = true,
+                 UserRoleId = Convert.ToInt32(cmbUserRole.SelectedValue.ToString()),
+            };
+
+            return staffBLL.UpdateStaff(res, userAccount);
         }
 
         public void Clear()
@@ -152,7 +235,7 @@ namespace HMS.PL
             cmbGender.SelectedIndex = -1;
             cmbUserRole.SelectedIndex = -1;
             cmbUserType.SelectedIndex = -1;
-           
+            btnSubmit.Text = "SUBMIT";
         }
     }
 }

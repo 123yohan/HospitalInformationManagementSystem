@@ -42,15 +42,10 @@ namespace HMS.PL
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtstaff = new System.Windows.Forms.TextBox();
-            this.lstViewStaff = new System.Windows.Forms.ListView();
-            this.StaffId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label7 = new System.Windows.Forms.Label();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.txtAttach = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -74,7 +69,7 @@ namespace HMS.PL
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
-            this.btnExit.Location = new System.Drawing.Point(793, 2);
+            this.btnExit.Location = new System.Drawing.Point(777, 2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(41, 35);
             this.btnExit.TabIndex = 8;
@@ -85,30 +80,33 @@ namespace HMS.PL
             // 
             this.cmbType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.cmbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbType.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(431, 61);
+            this.cmbType.Location = new System.Drawing.Point(22, 58);
             this.cmbType.Name = "cmbType";
-            this.cmbType.Size = new System.Drawing.Size(376, 21);
+            this.cmbType.Size = new System.Drawing.Size(376, 22);
             this.cmbType.TabIndex = 20;
             // 
             // txtMobileNo
             // 
             this.txtMobileNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtMobileNo.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMobileNo.ForeColor = System.Drawing.Color.White;
-            this.txtMobileNo.Location = new System.Drawing.Point(218, 120);
+            this.txtMobileNo.Location = new System.Drawing.Point(416, 59);
             this.txtMobileNo.MaxLength = 10;
             this.txtMobileNo.Name = "txtMobileNo";
-            this.txtMobileNo.Size = new System.Drawing.Size(195, 20);
+            this.txtMobileNo.Size = new System.Drawing.Size(195, 22);
             this.txtMobileNo.TabIndex = 17;
             // 
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtDescription.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescription.ForeColor = System.Drawing.Color.White;
-            this.txtDescription.Location = new System.Drawing.Point(30, 174);
+            this.txtDescription.Location = new System.Drawing.Point(22, 158);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(781, 151);
+            this.txtDescription.Size = new System.Drawing.Size(781, 79);
             this.txtDescription.TabIndex = 18;
             // 
             // btnClear
@@ -119,7 +117,7 @@ namespace HMS.PL
             this.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClear.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.Color.White;
-            this.btnClear.Location = new System.Drawing.Point(30, 345);
+            this.btnClear.Location = new System.Drawing.Point(22, 354);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(117, 27);
             this.btnClear.TabIndex = 14;
@@ -135,7 +133,7 @@ namespace HMS.PL
             this.btnAttach.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAttach.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAttach.ForeColor = System.Drawing.Color.White;
-            this.btnAttach.Location = new System.Drawing.Point(694, 116);
+            this.btnAttach.Location = new System.Drawing.Point(416, 107);
             this.btnAttach.Name = "btnAttach";
             this.btnAttach.Size = new System.Drawing.Size(117, 27);
             this.btnAttach.TabIndex = 15;
@@ -151,7 +149,7 @@ namespace HMS.PL
             this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(690, 345);
+            this.btnSubmit.Location = new System.Drawing.Point(686, 354);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(117, 27);
             this.btnSubmit.TabIndex = 16;
@@ -164,7 +162,7 @@ namespace HMS.PL
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(218, 99);
+            this.label3.Location = new System.Drawing.Point(416, 38);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 18);
             this.label3.TabIndex = 9;
@@ -175,7 +173,7 @@ namespace HMS.PL
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(431, 99);
+            this.label5.Location = new System.Drawing.Point(22, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(119, 18);
             this.label5.TabIndex = 10;
@@ -186,126 +184,70 @@ namespace HMS.PL
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(431, 41);
+            this.label6.Location = new System.Drawing.Point(22, 38);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 18);
+            this.label6.Size = new System.Drawing.Size(99, 18);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Type";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(30, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(76, 18);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Staff Name";
+            this.label6.Text = "Complain Type";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(30, 155);
+            this.label2.Location = new System.Drawing.Point(22, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(78, 18);
             this.label2.TabIndex = 13;
             this.label2.Text = "Description";
             // 
-            // txtstaff
-            // 
-            this.txtstaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.txtstaff.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtstaff.ForeColor = System.Drawing.Color.White;
-            this.txtstaff.Location = new System.Drawing.Point(30, 62);
-            this.txtstaff.Name = "txtstaff";
-            this.txtstaff.Size = new System.Drawing.Size(383, 21);
-            this.txtstaff.TabIndex = 21;
-            this.txtstaff.TextChanged += new System.EventHandler(this.txtstaff_TextChanged);
-            this.txtstaff.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtstaff_KeyDown);
-            // 
-            // lstViewStaff
-            // 
-            this.lstViewStaff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.lstViewStaff.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.StaffId,
-            this.FirstName});
-            this.lstViewStaff.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lstViewStaff.ForeColor = System.Drawing.Color.Silver;
-            this.lstViewStaff.FullRowSelect = true;
-            this.lstViewStaff.HideSelection = false;
-            this.lstViewStaff.Location = new System.Drawing.Point(30, 89);
-            this.lstViewStaff.Name = "lstViewStaff";
-            this.lstViewStaff.Size = new System.Drawing.Size(410, 236);
-            this.lstViewStaff.TabIndex = 22;
-            this.lstViewStaff.UseCompatibleStateImageBehavior = false;
-            this.lstViewStaff.View = System.Windows.Forms.View.Details;
-            this.lstViewStaff.Visible = false;
-            this.lstViewStaff.KeyDown += new System.Windows.Forms.KeyEventHandler(this.lstViewStaff_KeyDown);
-            // 
-            // StaffId
-            // 
-            this.StaffId.DisplayIndex = 1;
-            this.StaffId.Text = "ID";
-            this.StaffId.Width = 0;
-            // 
-            // FirstName
-            // 
-            this.FirstName.DisplayIndex = 0;
-            this.FirstName.Text = "Staff Name";
-            this.FirstName.Width = 400;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(30, 97);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 18);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "Date";
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDate.Location = new System.Drawing.Point(33, 118);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(167, 21);
-            this.dtpDate.TabIndex = 23;
-            // 
             // txtAttach
             // 
             this.txtAttach.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.txtAttach.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAttach.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAttach.ForeColor = System.Drawing.Color.White;
-            this.txtAttach.Location = new System.Drawing.Point(434, 122);
+            this.txtAttach.Location = new System.Drawing.Point(22, 109);
             this.txtAttach.Name = "txtAttach";
-            this.txtAttach.Size = new System.Drawing.Size(254, 21);
+            this.txtAttach.Size = new System.Drawing.Size(376, 22);
             this.txtAttach.TabIndex = 21;
-            this.txtAttach.TextChanged += new System.EventHandler(this.txtstaff_TextChanged);
-            this.txtAttach.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtstaff_KeyDown);
+            
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Gray;
+            this.label4.Location = new System.Drawing.Point(22, 242);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 18);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Action";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.textBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(22, 262);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(781, 79);
+            this.textBox1.TabIndex = 18;
             // 
             // ComplaintsAddPL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(840, 389);
-            this.Controls.Add(this.lstViewStaff);
-            this.Controls.Add(this.dtpDate);
+            this.ClientSize = new System.Drawing.Size(824, 399);
             this.Controls.Add(this.txtAttach);
-            this.Controls.Add(this.txtstaff);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.txtMobileNo);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAttach);
             this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
@@ -317,6 +259,7 @@ namespace HMS.PL
             this.Name = "ComplaintsAddPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ComplaintsAddPL";
+            this.Load += new System.EventHandler(this.ComplaintsAddPL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,14 +278,9 @@ namespace HMS.PL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtstaff;
-        private System.Windows.Forms.ListView lstViewStaff;
-        private System.Windows.Forms.ColumnHeader FirstName;
-        private System.Windows.Forms.ColumnHeader StaffId;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.TextBox txtAttach;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

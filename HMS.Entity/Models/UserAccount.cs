@@ -21,5 +21,6 @@ namespace HMS.Entity.Models
         public Nullable<bool> Active { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public string Status { get; set; }
+        public Nullable<int> UserRoleId { get; set; }
     }
 }

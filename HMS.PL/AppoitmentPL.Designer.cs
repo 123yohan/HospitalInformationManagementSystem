@@ -101,18 +101,18 @@ namespace HMS.PL
             // 
             // btnAddPaitent
             // 
-            this.btnAddPaitent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnAddPaitent.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
             this.btnAddPaitent.FlatAppearance.BorderSize = 0;
             this.btnAddPaitent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddPaitent.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddPaitent.ForeColor = System.Drawing.Color.White;
-            this.btnAddPaitent.Image = global::HMS.PL.Properties.Resources.icons8_add_24__1_;
+            this.btnAddPaitent.Image = global::HMS.PL.Properties.Resources.icons8_add_new_30;
             this.btnAddPaitent.Location = new System.Drawing.Point(110, 48);
             this.btnAddPaitent.Name = "btnAddPaitent";
             this.btnAddPaitent.Size = new System.Drawing.Size(38, 27);
             this.btnAddPaitent.TabIndex = 19;
             this.btnAddPaitent.UseVisualStyleBackColor = false;
+            this.btnAddPaitent.Visible = false;
             this.btnAddPaitent.Click += new System.EventHandler(this.btnAddPaitent_Click);
             // 
             // label2
@@ -319,6 +319,7 @@ namespace HMS.PL
             this.Name = "AppoitmentPL";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AppoitmentPL";
+            this.Load += new System.EventHandler(this.AppoitmentPL_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

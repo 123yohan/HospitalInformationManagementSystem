@@ -29,5 +29,13 @@ namespace HMS.BLL
         {
             return await ComplainDAL.AddComplain(complaint);
         }
+
+        public DataGridView GetComplaints(DataGridView dgv)
+        {
+            dgv.AutoGenerateColumns = false;
+            dgv.DataSource = ComplainDAL.GetComplaints();
+            
+            return dgv;
+        }
     }
 }
