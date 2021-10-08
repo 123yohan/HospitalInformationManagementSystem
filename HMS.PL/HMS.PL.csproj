@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddVisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddVisitorsPL.designer.cs">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppoitmentPL.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,8 +121,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="VisitorsPL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VisitorsPL.designer.cs">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddVisitorsPL.resx">
+      <DependentUpon>AddVisitorsPL.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppoitmentPL.resx">
       <DependentUpon>AppoitmentPL.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +166,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VisitorsPL.resx">
+      <DependentUpon>VisitorsPL.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -222,6 +240,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-supplier-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\icons8-add-new-30.png" />
+    <None Include="Resources\icons8-add-new-301.png" />
+    <Content Include="Resources\icons8-delete-user-data-30.png" />
+    <Content Include="Resources\icons8-export-pdf-20.png" />
+    <Content Include="Resources\icons8-export-pdf-25.png" />
+    <Content Include="Resources\icons8-microsoft-to-do-app-30.png" />
+    <Content Include="Resources\icons8-presentation-30.png" />
+    <Content Include="Resources\icons8-report-card-40.png" />
+    <Content Include="Resources\icons8-time-30.png" />
+    <Content Include="Resources\icons8-tourist-guide-skin-type-1-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

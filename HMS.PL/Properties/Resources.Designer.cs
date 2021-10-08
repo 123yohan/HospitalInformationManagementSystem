@@ -93,6 +93,16 @@ namespace HMS.PL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_new_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-add-new-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_add_user_male_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-add-user-male-40", resourceCulture);
