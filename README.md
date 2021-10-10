@@ -1,3 +1,5 @@
+123yohan/HospitalInformationManagementSystem
+
 # HospitalInformationManagementSystem
  # Group Assesment - UOVT | Visual Programming II 
 
@@ -41,3 +43,7 @@ System Funcrions
 	
 	
 Software : Visual Studio, MS-SQL server, Adobe XD	
+
+
+
+123yohan/HospitalInformationManagementSystem
