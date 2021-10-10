@@ -17,12 +17,44 @@ namespace HMS.PL
     public partial class ComplaintsAddPL : Form
     {
         ComplainBLL complainBLL;
-        int staffId;
+        int ComplainId;
+        Func<int> DataLoadMethod;
         string fileContent = string.Empty;
-        public ComplaintsAddPL()
+        public ComplaintsAddPL(bool Action, Func<int> DataLoadMethod, int Id)
         {
             InitializeComponent();
             complainBLL = new ComplainBLL();
+
+            this.DataLoadMethod = DataLoadMethod;
+
+            if (Action)
+            {
+                txtAction.ReadOnly = true;
+            }
+            else
+            {
+                txtAction.ReadOnly = false;
+            }
+
+            if (Id > 0)
+            {
+                ComplainId = Id;
+                btnSubmit.Text = "UPDATE";
+                btnClear.Visible = false;
+                GetAllComplaintsById(Id);
+            }
+        }
+
+        public void GetAllComplaintsById(int Id)
+        {
+            var res = complainBLL.GetComplaints(Id).FirstOrDefault();
+            if (res != null)
+            {
+                txtDescription.Text = res.Complaint;
+                txtAction.Text = res.Action;
+                txtMobileNo.Text = res.MobileNo;
+                cmbType.Text = res.Type;
+            }
         }
 
         private void btnAttach_Click(object sender, EventArgs e)
@@ -57,24 +89,54 @@ namespace HMS.PL
             }
             else
             {
-                var res = new Complaint
+                if(btnSubmit.Text == "SUBMIT")
                 {
-                    StaffId = staffId,
-                    MobileNo = txtMobileNo.Text,
-                    Decription = txtDescription.Text.Trim(),
-                    Status = 1,
-                    CreatedBy = HMSComman.UserAccId,
-                    CreatedDate = DateTime.Now,
-                    Date = DateTime.Now,
-                    Type = "",
-                    AttachFiles = fileContent
-                };
+                    var res = new Complaint
+                    {
 
-                if (await complainBLL.AddComplain(res) > 0)
-                {
-                    MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Clear();
+                        MobileNo = txtMobileNo.Text,
+                        Decription = txtDescription.Text.Trim(),
+                        Status = 1,
+                        CreatedBy = HMSComman.UserAccId,
+                        CreatedDate = DateTime.Now,
+                        Date = DateTime.Now,
+                        Type = cmbType.SelectedItem.ToString(),
+                        AttachFiles = fileContent
+                    };
+
+                    if (await complainBLL.AddComplain(res) > 0)
+                    {
+                        MessageBox.Show("Succesfully Saved", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataLoadMethod();
+                        Clear();
+                    }
                 }
+                else
+                {
+                    var res = new Complaint
+                    {
+                        ComplainId = ComplainId,
+                        MobileNo = txtMobileNo.Text,
+                        Decription = txtDescription.Text.Trim(),
+                        Status = 1,
+                        CreatedBy = HMSComman.UserAccId,
+                        CreatedDate = DateTime.Now,
+                        Date = DateTime.Now,
+                        Type = cmbType.SelectedItem.ToString(),
+                        Action = txtAction.Text,
+                        AttachFiles = fileContent
+                    };
+
+                    if (await complainBLL.UpdateComplain(res) > 0)
+                    {
+                        MessageBox.Show("Succesfully Updated", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        DataLoadMethod();
+                        this.Close();
+                        Clear();
+                    }
+                }
+
+              
             }
         }
 
@@ -82,8 +144,10 @@ namespace HMS.PL
         {
             txtDescription.Text = "";
             txtMobileNo.Text = "";
-           
+            txtAction.ReadOnly = true;
             cmbType.SelectedIndex = -1;
+            btnSubmit.Text = "SUBMIT";
+            ComplainId = 0;
         }
 
         private void btnAttach_Click_1(object sender, EventArgs e)

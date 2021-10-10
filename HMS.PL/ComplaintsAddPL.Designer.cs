@@ -45,7 +45,7 @@ namespace HMS.PL
             this.label2 = new System.Windows.Forms.Label();
             this.txtAttach = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtAction = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +81,12 @@ namespace HMS.PL
             this.cmbType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
             this.cmbType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbType.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbType.ForeColor = System.Drawing.Color.White;
             this.cmbType.FormattingEnabled = true;
+            this.cmbType.Items.AddRange(new object[] {
+            "Patient complaints",
+            "Medical complaints",
+            "Medical office complaints"});
             this.cmbType.Location = new System.Drawing.Point(22, 58);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(376, 22);
@@ -210,7 +215,6 @@ namespace HMS.PL
             this.txtAttach.Name = "txtAttach";
             this.txtAttach.Size = new System.Drawing.Size(376, 22);
             this.txtAttach.TabIndex = 21;
-            
             // 
             // label4
             // 
@@ -223,16 +227,16 @@ namespace HMS.PL
             this.label4.TabIndex = 13;
             this.label4.Text = "Action";
             // 
-            // textBox1
+            // txtAction
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
-            this.textBox1.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(22, 262);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(781, 79);
-            this.textBox1.TabIndex = 18;
+            this.txtAction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.txtAction.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAction.ForeColor = System.Drawing.Color.White;
+            this.txtAction.Location = new System.Drawing.Point(22, 262);
+            this.txtAction.Multiline = true;
+            this.txtAction.Name = "txtAction";
+            this.txtAction.Size = new System.Drawing.Size(781, 79);
+            this.txtAction.TabIndex = 18;
             // 
             // ComplaintsAddPL
             // 
@@ -243,7 +247,7 @@ namespace HMS.PL
             this.Controls.Add(this.txtAttach);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.txtMobileNo);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtAction);
             this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnAttach);
@@ -281,6 +285,6 @@ namespace HMS.PL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtAttach;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtAction;
     }
 }
