@@ -2,14 +2,14 @@
 # HospitalInformationManagementSystem
  # Group Assesment - UOVT | Visual Programming II 
 
-Members
+## Members
 
 	H.M.Y.A.Amarasiri - SOF/ 19/ B2/ 05
 	L.G.N.S.Gamage    - BED/ 19/ B2/ 08
 	D.T.R.Senarathna  - NET/ 19/ B2/ 26
 	D.D.S.Sirikumara  - SOF/ 19/ B2/ 28
 	
-Lecture : MRS.Madhushi Welikala
+## Lecture : MRS.Madhushi Welikala
 	
 
 
@@ -23,10 +23,10 @@ Why Hospital Management System ?
 	6. Establish your hospital as technically advanced
 	
 
-Architecture 	-  N-tier architecture
+## Architecture 	-  N-tier architecture
 
 
-System Funcrions 
+## System Funcrions 
 	
 	User Logings 
 	Staff Details
@@ -46,3 +46,6 @@ Software : Visual Studio, MS-SQL server, Adobe XD
 
 
 123yohan/HospitalInformationManagementSystem
+
+
+Link : https://github.com/123yohan/HospitalInformationManagementSystem
