@@ -1,4 +1,3 @@
-123yohan/HospitalInformationManagementSystem
 
 # HospitalInformationManagementSystem
  # Group Assesment - UOVT | Visual Programming II 
