@@ -13,7 +13,7 @@
 	
 
 
-Why Hospital Management System ?
+## Why Hospital Management System ?
 	
 	1. Achieve good quality ratings
 	2. Better revenue management
@@ -41,7 +41,8 @@ Why Hospital Management System ?
 	Postal
 	
 	
-Software : Visual Studio, MS-SQL server, Adobe XD	
+## Software : 
+	Visual Studio, MS-SQL server, Adobe XD	
 
 
 
