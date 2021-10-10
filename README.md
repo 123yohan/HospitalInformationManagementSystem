@@ -1,5 +1,5 @@
 # HospitalInformationManagementSystem
-# Group Assesment - UOVT
+ # Group Assesment - UOVT | Visual Programming II 
 
 Members
 
@@ -7,6 +7,9 @@ Members
 	L.G.N.S.Gamage    - BED/ 19/ B2/ 08
 	D.T.R.Senarathna  - NET/ 19/ B2/ 26
 	D.D.S.Sirikumara  - SOF/ 19/ B2/ 28
+	
+Lecture : MRS.Madhushi Welikala
+	
 
 
 Why Hospital Management System ?
