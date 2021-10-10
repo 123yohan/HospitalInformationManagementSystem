@@ -12,12 +12,15 @@ namespace HMS.Models
         public int PatientId { get; set; }
         public int StaffId { get; set; }
         public string Status { get; set; }
+        public string Type { get; set; }
         public string PatientName { get; set; }
+        public string Decription { get; set; }
         public string StaffName { get; set; }
         public string Complaint { get; set; }
         public string Action { get; set; }
         public string MobileNo { get; set; }
         public DateTime? CreatedDate { get; set; }
+        public DateTime? Date { get; set; }
         public DateTime? UpdateDate { get; set; }
     }
 }

@@ -18,6 +18,7 @@ namespace HMS.PL
     public partial class AppoitmentPL : Form
     {
         AppoitmentBLL appoitmentBLL;
+        PatientBLL patientBLL;
         AppointmentReportBLL appointmentReportBLL;
         int staffId, patientId, AppoitmentId;
         Func<int> DataLoadMethod;
@@ -27,6 +28,7 @@ namespace HMS.PL
             appoitmentBLL = new AppoitmentBLL();
             appointmentReportBLL = new AppointmentReportBLL();
             this.DataLoadMethod = DataLoadMethod;
+            patientBLL = new PatientBLL();
             PageAccess();
             if (AppoimentId > 0)
             {
@@ -88,9 +90,15 @@ namespace HMS.PL
                     return;
                 }
             }
-            Form frm = new PatientAddPL();
+            Form frm = new PatientAddPL(LoadDataDgvStaff,0);
             frm.MdiParent = MasterForm.ActiveForm;
             frm.Show();
+        }
+
+        public int LoadDataDgvStaff()
+        {
+            
+            return 0;
         }
 
         private void txtMedical_TextChanged(object sender, EventArgs e)

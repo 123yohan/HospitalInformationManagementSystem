@@ -14,12 +14,13 @@ namespace HMS.PL
 {
     public partial class PatientDetailsPL : Form
     {
-       
+        PatientBLL patientBLL;
         public PatientDetailsPL()
         {
             InitializeComponent();
+            patientBLL = new PatientBLL();
             PageAccess();
-          
+            LoadDataDgvStaff();
         }
 
         public void PageAccess()
@@ -44,6 +45,12 @@ namespace HMS.PL
             }
         }
 
+        public int LoadDataDgvStaff()
+        {
+            patientBLL.GetPatient(dgvPatient);
+            return 0;
+        }
+
         private void btnAddPaitent_Click(object sender, EventArgs e)
         {
 
@@ -63,7 +70,7 @@ namespace HMS.PL
                     return;
                 }
             }
-            Form frm = new PatientAddPL();
+            Form frm = new PatientAddPL(LoadDataDgvStaff,0);
             frm.MdiParent = MasterForm.ActiveForm;
             frm.Show();
         }
@@ -76,6 +83,59 @@ namespace HMS.PL
         private void PatientDetailsPL_Load(object sender, EventArgs e)
         {
            
+        }
+
+        public int DeletePatient(int id)
+        {
+            return patientBLL.DeletePatient(id);
+        }
+
+        private void dgvPatient_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == dgvPatient.Columns["Edite"].Index && e.RowIndex >= 0)
+            {
+                foreach (Form f in this.MdiChildren)
+                {
+                    if (f.GetType() == typeof(AddPostalPL))
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+                foreach (Form f in Application.OpenForms)
+                {
+                    if (f.GetType() == typeof(AddPostalPL))
+                    {
+                        f.Activate();
+                        return;
+                    }
+                }
+
+                int Id = Convert.ToInt32(dgvPatient.Rows[e.RowIndex].Cells[1].Value);
+                Form frm = new PatientAddPL(LoadDataDgvStaff, Id);
+                frm.MdiParent = MasterForm.ActiveForm;
+                frm.Show();
+
+
+            }
+
+
+
+            if (e.ColumnIndex == dgvPatient.Columns["DELETE"].Index && e.RowIndex >= 0)
+            {
+
+                if (DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
+                {
+                    int Id = Convert.ToInt32(dgvPatient.Rows[e.RowIndex].Cells[1].Value);
+                    if (DeletePatient(Id) > 0)
+                    {
+                        MessageBox.Show("Delete Succesfully", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadDataDgvStaff();
+                    }
+                }
+
+
+            }
         }
     }
 }
