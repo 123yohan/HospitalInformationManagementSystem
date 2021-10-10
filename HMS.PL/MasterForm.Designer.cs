@@ -56,6 +56,7 @@ namespace HMS.PL
             this.btnPc = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnPostal = new System.Windows.Forms.Button();
+            this.btn_logout = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.btnUserLog.SuspendLayout();
@@ -64,6 +65,7 @@ namespace HMS.PL
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.panel1.Controls.Add(this.btn_logout);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
@@ -408,7 +410,7 @@ namespace HMS.PL
             this.btnPostal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPostal.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPostal.Image = global::HMS.PL.Properties.Resources.icons8_presentation_30;
+            this.btnPostal.Image = ((System.Drawing.Image)(resources.GetObject("btnPostal.Image")));
             this.btnPostal.Location = new System.Drawing.Point(943, 3);
             this.btnPostal.Name = "btnPostal";
             this.btnPostal.Size = new System.Drawing.Size(88, 96);
@@ -418,6 +420,19 @@ namespace HMS.PL
             this.btnPostal.UseVisualStyleBackColor = true;
             this.btnPostal.Visible = false;
             this.btnPostal.Click += new System.EventHandler(this.btnPostal_Click);
+            // 
+            // btn_logout
+            // 
+            this.btn_logout.BackColor = System.Drawing.Color.Transparent;
+            this.btn_logout.FlatAppearance.BorderSize = 0;
+            this.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logout.Image = ((System.Drawing.Image)(resources.GetObject("btn_logout.Image")));
+            this.btn_logout.Location = new System.Drawing.Point(945, 18);
+            this.btn_logout.Name = "btn_logout";
+            this.btn_logout.Size = new System.Drawing.Size(41, 35);
+            this.btn_logout.TabIndex = 11;
+            this.btn_logout.UseVisualStyleBackColor = false;
+            this.btn_logout.Click += new System.EventHandler(this.button4_Click);
             // 
             // MasterForm
             // 
@@ -469,6 +484,7 @@ namespace HMS.PL
         private System.Windows.Forms.Button btnDletedAppointment;
         private System.Windows.Forms.Button btnVisitors;
         private System.Windows.Forms.Button btnPostal;
+        private System.Windows.Forms.Button btn_logout;
     }
 }
 

@@ -414,5 +414,14 @@ namespace HMS.PL
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            btnExit ss = new btnExit();
+            ss.Show();
+
+
+        }
     }
 }

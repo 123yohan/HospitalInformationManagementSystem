@@ -52,7 +52,7 @@
     <Compile Include="AddPostalPL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddPostalPL.Designer.cs">
+    <Compile Include="AddPostalPL.designer.cs">
       <DependentUpon>AddPostalPL.cs</DependentUpon>
     </Compile>
     <Compile Include="AddVisitorsPL.cs">

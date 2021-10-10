@@ -123,6 +123,7 @@ namespace HMS.DAL
                 }
                 else
                 {
+                    ScryptEncoder encoder = new ScryptEncoder();
                     var res = _Con.Staffs.Find(staff.StaffId);
                     res.FirstName = staff.FirstName;
                     res.LastName = staff.LastName;
@@ -131,12 +132,13 @@ namespace HMS.DAL
                     res.MobileNo = staff.MobileNo;
                     res.Nic = staff.Nic;
                     res.Email = staff.Email;
+                    
                    
 
                     var res2 = _Con.UserAccounts.Where(x => x.EmployeeId == staff.StaffId).FirstOrDefault();
                     if(res2 != null)
                     {
-                        res2.Password = userAccount.Password;
+                        res2.Password = encoder.Encode(userAccount.Password);
                         res2.UserRoleId = userAccount.UserRoleId;
                     }
 
