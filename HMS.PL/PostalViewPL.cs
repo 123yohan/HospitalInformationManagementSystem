@@ -12,14 +12,47 @@ using System.Windows.Forms;
 
 namespace HMS.PL
 {
-    public partial class ComplaintsViewPL : Form
+    public partial class PostalViewPL : Form
     {
-        ComplainBLL complainBLL;
-        public ComplaintsViewPL()
+        PostalBLL postalBLL;
+       
+        public PostalViewPL()
         {
             InitializeComponent();
-            complainBLL = new ComplainBLL();
+            postalBLL = new PostalBLL();
+
+            DataLoadGrid();
             PageAccess();
+        }
+
+        public void PageAccess()
+        {
+            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Postal").FirstOrDefault();
+            if (res != null)
+            {
+                if (res.AddCommand == true)
+                {
+                    btnAddPostal.Visible = true;
+                }
+
+                if (res.EditCommand == true)
+                {
+                    dgvPostal.Columns[0].Visible = true;
+                }
+
+                if (res.DeleteCommand == true)
+                {
+                    dgvPostal.Columns[8].Visible = true;
+                }
+            }
+        }
+
+        public int DataLoadGrid()
+        {
+            
+                postalBLL.GetAllPostals(dgvPostal);
+                return 0;
+           
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -27,35 +60,11 @@ namespace HMS.PL
             this.Close();
         }
 
-        public void PageAccess()
+        private void btnAddPostal_Click(object sender, EventArgs e)
         {
-            var res = LoginDAL.lstUserRole.Where(x => x.PageName == "Complatine").FirstOrDefault();
-            if (res != null)
-            {
-                if (res.AddCommand == true)
-                {
-                    btnAddComplains.Visible = true;
-                }
-
-                if (res.EditCommand == true)
-                {
-                    dgvComplaint.Columns[0].Visible = true;
-                }
-
-                if (res.DeleteCommand == true)
-                {
-                    dgvComplaint.Columns[8].Visible = true;
-                }
-            }
-        }
-
-
-        private void btnAddComplains_Click(object sender, EventArgs e)
-        {
-
             foreach (Form f in this.MdiChildren)
             {
-                if (f.GetType() == typeof(AppoitmentPL))
+                if (f.GetType() == typeof(AddPostalPL))
                 {
                     f.Activate();
                     return;
@@ -63,35 +72,25 @@ namespace HMS.PL
             }
             foreach (Form f in Application.OpenForms)
             {
-                if (f.GetType() == typeof(ComplaintsAddPL))
+                if (f.GetType() == typeof(AddPostalPL))
                 {
                     f.Activate();
                     return;
                 }
             }
-            Form frm = new ComplaintsAddPL(true, GetComplaint,0);
+           
+            Form frm = new AddPostalPL(DataLoadGrid,0);
             frm.MdiParent = MasterForm.ActiveForm;
             frm.Show();
         }
 
-        private void ComplaintsViewPL_Load(object sender, EventArgs e)
+        private void dgvPostal_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            GetComplaint();
-        }
-
-        public int GetComplaint()
-        {
-            complainBLL.GetComplaints(dgvComplaint);
-            return 0;
-        }
-
-        private void dgvComplaint_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == dgvComplaint.Columns["Edite"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvPostal.Columns["Edite"].Index && e.RowIndex >= 0)
             {
                 foreach (Form f in this.MdiChildren)
                 {
-                    if (f.GetType() == typeof(ComplaintsAddPL))
+                    if (f.GetType() == typeof(AddPostalPL))
                     {
                         f.Activate();
                         return;
@@ -99,15 +98,15 @@ namespace HMS.PL
                 }
                 foreach (Form f in Application.OpenForms)
                 {
-                    if (f.GetType() == typeof(ComplaintsAddPL))
+                    if (f.GetType() == typeof(AddPostalPL))
                     {
                         f.Activate();
                         return;
                     }
                 }
 
-                int Id = Convert.ToInt32(dgvComplaint.Rows[e.RowIndex].Cells[1].Value);
-                Form frm = new ComplaintsAddPL(false,GetComplaint, Id);
+                int Id = Convert.ToInt32(dgvPostal.Rows[e.RowIndex].Cells[1].Value);
+                Form frm = new AddPostalPL(DataLoadGrid,Id);
                 frm.MdiParent = MasterForm.ActiveForm;
                 frm.Show();
 
@@ -116,28 +115,31 @@ namespace HMS.PL
 
 
 
-            if (e.ColumnIndex == dgvComplaint.Columns["DELETE"].Index && e.RowIndex >= 0)
+            if (e.ColumnIndex == dgvPostal.Columns["DELETE"].Index && e.RowIndex >= 0)
             {
 
                 if (DialogResult.Yes == MessageBox.Show("Do You Want Delete ?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning))
                 {
-                    int Id = Convert.ToInt32(dgvComplaint.Rows[e.RowIndex].Cells[1].Value);
-                    if (DeleteComplaint(Id) > 0)
+                    int Id = Convert.ToInt32(dgvPostal.Rows[e.RowIndex].Cells[1].Value);
+                    if (DeleteAppoiment(Id) > 0)
                     {
                         MessageBox.Show("Delete Succesfully", "System Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        GetComplaint();
+                        DataLoadGrid();
                     }
                 }
 
-
+                
             }
-
-            
         }
 
-        public int DeleteComplaint(int Id)
+        public int DeleteAppoiment(int id)
         {
-            return complainBLL.DeleteComplaint(Id);
+            return postalBLL.DeletePostal(id);
+        }
+
+        private void PostalViewPL_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

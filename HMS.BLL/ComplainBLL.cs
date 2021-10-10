@@ -1,5 +1,6 @@
 ﻿using HMS.DAL;
 using HMS.Entity.Models;
+using HMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,31 +12,41 @@ namespace HMS.BLL
 {
     public class ComplainBLL
     {
-        public ListView GetStaff(ListView lstStaff, string Name)
-        {
-            var res = ComplainDAL.GetStaffs(Name);
-            lstStaff.Items.Clear();
-            foreach(var item in res)
-            {
-                ListViewItem ListItem = new ListViewItem(item.StaffId.ToString());
-                ListItem.SubItems.Add(item.FirstName + " " + item.LastName);
-                lstStaff.Items.Add(ListItem);
-            }
-
-            return lstStaff;
-        }
+      
 
         public async Task<int> AddComplain(Complaint complaint)
         {
             return await ComplainDAL.AddComplain(complaint);
+        }  
+        
+        public async Task<int> UpdateComplain(Complaint complaint)
+        {
+            return await ComplainDAL.UpdatedComplain(complaint);
         }
 
         public DataGridView GetComplaints(DataGridView dgv)
         {
             dgv.AutoGenerateColumns = false;
             dgv.DataSource = ComplainDAL.GetComplaints();
-            
+            dgv.Columns[6].DefaultCellStyle.Format = "yyyy MMMM dd ";
+
             return dgv;
+        }
+
+        public List<complaints> GetComplaints(int Id)
+        {
+          return ComplainDAL.GetComplaints(Id);
+
+        }
+
+        public async Task<int> UpdatedComplain(Complaint complaint)
+        {
+            return await ComplainDAL.UpdatedComplain(complaint);
+        }
+
+        public int DeleteComplaint(int Id)
+        {
+            return ComplainDAL.DeleteComplaint(Id);
         }
     }
 }

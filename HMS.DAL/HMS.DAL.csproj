@@ -60,6 +60,7 @@
     <Compile Include="AppointmentReportDAL.cs" />
     <Compile Include="ComplainDAL.cs" />
     <Compile Include="LoginDAL.cs" />
+    <Compile Include="PatientDAL.cs" />
     <Compile Include="PostalDAL.cs" />
     <Compile Include="StaffDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
