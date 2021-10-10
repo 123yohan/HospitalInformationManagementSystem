@@ -1,3 +1,5 @@
+project Name : 123yohan/HospitalInformationManagementSystem
+
 
 # HospitalInformationManagementSystem
  # Group Assesment - UOVT | Visual Programming II 
@@ -50,3 +52,8 @@
 
 
 Link : https://github.com/123yohan/HospitalInformationManagementSystem
+
+
+
+
+
