@@ -24,7 +24,7 @@ Architecture 	-  N-tier architecture
 
 System Funcrions 
 	
-	User Loging 
+	User Logings 
 	Staff Details
 	Patient Details
 	Visitor Module
@@ -32,6 +32,7 @@ System Funcrions
 	Appoinment 
 	Appoinment Report
 	Page Config
+		Multiple Page customise
 	User Logs
 	Postal
 	
