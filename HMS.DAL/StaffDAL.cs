@@ -116,7 +116,7 @@ namespace HMS.DAL
         {
             try
             {
-                var duplicate = _Con.Staffs.Any(x => x.Nic == staff.Nic && x.Active == true || x.Email == staff.Email && x.Active == true && x.StaffId != staff.StaffId);
+                var duplicate = _Con.Staffs.Any(x => x.Nic == staff.Nic && x.Active == true && x.StaffId != staff.StaffId || x.Email == staff.Email && x.Active == true && x.StaffId != staff.StaffId);
                 if(duplicate)
                 {
                     Result = 99;
@@ -136,7 +136,9 @@ namespace HMS.DAL
                     var res2 = _Con.UserAccounts.Where(x => x.EmployeeId == staff.StaffId).FirstOrDefault();
                     if(res2 != null)
                     {
-                        res2.Password = userAccount.Password;
+                        ScryptEncoder encoder = new ScryptEncoder();
+                        res2.Username = userAccount.Username;
+                        res2.Password = encoder.Encode(userAccount.Password);
                         res2.UserRoleId = userAccount.UserRoleId;
                     }
 

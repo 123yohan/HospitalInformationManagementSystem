@@ -10,5 +10,6 @@ namespace HMS.Other
     {
         public static int UserAccId;
         public static string PageName;
+        public static string UserRoleName;
     }
 }

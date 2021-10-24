@@ -105,8 +105,7 @@ namespace HMS.PL
             this.cmbUserType.FormattingEnabled = true;
             this.cmbUserType.Items.AddRange(new object[] {
             "Receptionist",
-            "Medical Officer",
-            "Patient"});
+            "Medical Officer"});
             this.cmbUserType.Location = new System.Drawing.Point(428, 198);
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(190, 23);

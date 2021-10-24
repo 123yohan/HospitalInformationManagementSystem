@@ -32,7 +32,7 @@ namespace HMS.PL
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MasterForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,11 +51,11 @@ namespace HMS.PL
             this.btnComplatine = new System.Windows.Forms.Button();
             this.bnappointment = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.btnAppointmentReport = new System.Windows.Forms.Button();
+            this.btnPostal = new System.Windows.Forms.Button();
             this.btnDletedAppointment = new System.Windows.Forms.Button();
+            this.btnAppointmentReport = new System.Windows.Forms.Button();
             this.btnPc = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnPostal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.btnUserLog.SuspendLayout();
@@ -64,7 +64,7 @@ namespace HMS.PL
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.lblAdmin);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -75,17 +75,17 @@ namespace HMS.PL
             this.panel1.Size = new System.Drawing.Size(1162, 70);
             this.panel1.TabIndex = 2;
             // 
-            // label5
+            // lblAdmin
             // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(1061, 40);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 15);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Admin";
+            this.lblAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAdmin.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.ForeColor = System.Drawing.Color.Gray;
+            this.lblAdmin.Location = new System.Drawing.Point(899, 40);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.Size = new System.Drawing.Size(204, 15);
+            this.lblAdmin.TabIndex = 10;
+            this.lblAdmin.Text = "Admin";
+            this.lblAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label4
             // 
@@ -221,11 +221,11 @@ namespace HMS.PL
             this.btnUserLog.Controls.Add(this.btnComplatine);
             this.btnUserLog.Controls.Add(this.bnappointment);
             this.btnUserLog.Controls.Add(this.button3);
-            this.btnUserLog.Controls.Add(this.btnAppointmentReport);
+            this.btnUserLog.Controls.Add(this.btnPostal);
             this.btnUserLog.Controls.Add(this.btnDletedAppointment);
+            this.btnUserLog.Controls.Add(this.btnAppointmentReport);
             this.btnUserLog.Controls.Add(this.btnPc);
             this.btnUserLog.Controls.Add(this.button1);
-            this.btnUserLog.Controls.Add(this.btnPostal);
             this.btnUserLog.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnUserLog.Location = new System.Drawing.Point(0, 70);
             this.btnUserLog.Name = "btnUserLog";
@@ -334,22 +334,22 @@ namespace HMS.PL
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // btnAppointmentReport
+            // btnPostal
             // 
-            this.btnAppointmentReport.FlatAppearance.BorderSize = 0;
-            this.btnAppointmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAppointmentReport.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAppointmentReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnAppointmentReport.Image = global::HMS.PL.Properties.Resources.icons8_report_card_40;
-            this.btnAppointmentReport.Location = new System.Drawing.Point(567, 3);
-            this.btnAppointmentReport.Name = "btnAppointmentReport";
-            this.btnAppointmentReport.Size = new System.Drawing.Size(88, 98);
-            this.btnAppointmentReport.TabIndex = 10;
-            this.btnAppointmentReport.Text = "APPOINTMENTT REPORT";
-            this.btnAppointmentReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAppointmentReport.UseVisualStyleBackColor = true;
-            this.btnAppointmentReport.Visible = false;
-            this.btnAppointmentReport.Click += new System.EventHandler(this.btnAppointmentReport_Click);
+            this.btnPostal.FlatAppearance.BorderSize = 0;
+            this.btnPostal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPostal.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPostal.Image = global::HMS.PL.Properties.Resources.icons8_presentation_30;
+            this.btnPostal.Location = new System.Drawing.Point(567, 3);
+            this.btnPostal.Name = "btnPostal";
+            this.btnPostal.Size = new System.Drawing.Size(88, 96);
+            this.btnPostal.TabIndex = 10;
+            this.btnPostal.Text = "POSTAL";
+            this.btnPostal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnPostal.UseVisualStyleBackColor = true;
+            this.btnPostal.Visible = false;
+            this.btnPostal.Click += new System.EventHandler(this.btnPostal_Click);
             // 
             // btnDletedAppointment
             // 
@@ -368,6 +368,23 @@ namespace HMS.PL
             this.btnDletedAppointment.Visible = false;
             this.btnDletedAppointment.Click += new System.EventHandler(this.btnDletedAppointment_Click);
             // 
+            // btnAppointmentReport
+            // 
+            this.btnAppointmentReport.FlatAppearance.BorderSize = 0;
+            this.btnAppointmentReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAppointmentReport.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAppointmentReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAppointmentReport.Image = global::HMS.PL.Properties.Resources.icons8_report_card_40;
+            this.btnAppointmentReport.Location = new System.Drawing.Point(755, 3);
+            this.btnAppointmentReport.Name = "btnAppointmentReport";
+            this.btnAppointmentReport.Size = new System.Drawing.Size(88, 98);
+            this.btnAppointmentReport.TabIndex = 10;
+            this.btnAppointmentReport.Text = "APPOINTMENTT REPORT";
+            this.btnAppointmentReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAppointmentReport.UseVisualStyleBackColor = true;
+            this.btnAppointmentReport.Visible = false;
+            this.btnAppointmentReport.Click += new System.EventHandler(this.btnAppointmentReport_Click);
+            // 
             // btnPc
             // 
             this.btnPc.FlatAppearance.BorderSize = 0;
@@ -375,7 +392,7 @@ namespace HMS.PL
             this.btnPc.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnPc.Image = global::HMS.PL.Properties.Resources.icons8_keep_locked_40;
-            this.btnPc.Location = new System.Drawing.Point(755, 3);
+            this.btnPc.Location = new System.Drawing.Point(849, 3);
             this.btnPc.Name = "btnPc";
             this.btnPc.Size = new System.Drawing.Size(88, 96);
             this.btnPc.TabIndex = 10;
@@ -392,7 +409,7 @@ namespace HMS.PL
             this.button1.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.button1.Image = global::HMS.PL.Properties.Resources.icons8_presentation_30;
-            this.button1.Location = new System.Drawing.Point(849, 3);
+            this.button1.Location = new System.Drawing.Point(943, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(88, 96);
             this.button1.TabIndex = 10;
@@ -401,23 +418,6 @@ namespace HMS.PL
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Visible = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // btnPostal
-            // 
-            this.btnPostal.FlatAppearance.BorderSize = 0;
-            this.btnPostal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPostal.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPostal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnPostal.Image = global::HMS.PL.Properties.Resources.icons8_presentation_30;
-            this.btnPostal.Location = new System.Drawing.Point(943, 3);
-            this.btnPostal.Name = "btnPostal";
-            this.btnPostal.Size = new System.Drawing.Size(88, 96);
-            this.btnPostal.TabIndex = 10;
-            this.btnPostal.Text = "POSTAL";
-            this.btnPostal.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnPostal.UseVisualStyleBackColor = true;
-            this.btnPostal.Visible = false;
-            this.btnPostal.Click += new System.EventHandler(this.btnPostal_Click);
             // 
             // MasterForm
             // 
@@ -461,7 +461,7 @@ namespace HMS.PL
         private System.Windows.Forms.Button btnComplatine;
         private System.Windows.Forms.Button btnPc;
         private System.Windows.Forms.Button bnappointment;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAppointmentReport;
         private System.Windows.Forms.Button button1;

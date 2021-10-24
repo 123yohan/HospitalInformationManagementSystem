@@ -133,7 +133,9 @@ namespace HMS.DAL
                     var res2 = _Con.UserAccounts.Where(x => x.EmployeeId == patient.PatientId).FirstOrDefault();
                     if (res2 != null)
                     {
-                        res2.Password = userAccount.Password;
+                        ScryptEncoder encoder = new ScryptEncoder();
+                        res2.Username = userAccount.Username;
+                        res2.Password = encoder.Encode(userAccount.Password);
                         res2.UserRoleId = userAccount.UserRoleId;
                     }
 

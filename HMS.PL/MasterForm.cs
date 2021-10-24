@@ -1,4 +1,5 @@
 ﻿using HMS.DAL;
+using HMS.Other;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -103,7 +104,7 @@ namespace HMS.PL
                     break;
                 }
             }
-
+            lblAdmin.Text = HMSComman.UserRoleName;
             CheckPageAccess();
 
 

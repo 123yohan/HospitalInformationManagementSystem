@@ -31,6 +31,7 @@ namespace HMS.DAL
                 {
                     HMSComman.UserAccId = res.UserId;
                     GetPageAccess(res.UserRoleId);
+                    GetUserRoleName(res.UserRoleId);
                     return 1;
                 }
                 else
@@ -58,6 +59,16 @@ namespace HMS.DAL
             }
 
             return lstUserRole;
+        }
+
+        public static void GetUserRoleName(int? UserRoleId)
+        {
+            var res = _Con.UserRoles.FirstOrDefault(x => x.RoleId == UserRoleId);
+            if(res != null)
+            {
+                HMSComman.UserRoleName =  res.Name;
+            }
+            
         }
     }
 }

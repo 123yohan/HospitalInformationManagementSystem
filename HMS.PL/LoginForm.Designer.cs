@@ -106,7 +106,6 @@ namespace HMS.PL
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(267, 27);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "test123";
             this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -120,7 +119,6 @@ namespace HMS.PL
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(267, 27);
             this.txtUserName.TabIndex = 1;
-            this.txtUserName.Text = "Yohan";
             this.txtUserName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4

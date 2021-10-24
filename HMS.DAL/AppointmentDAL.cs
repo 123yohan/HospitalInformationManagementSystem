@@ -18,7 +18,7 @@ namespace HMS.DAL
         {
             if (string.IsNullOrWhiteSpace(Name))
             {
-                return _Con.Patients.ToList();
+                return _Con.Patients.Where(x=>x.Active == true).ToList();
             }
 
             var patientCollection = _Con.Patients as IQueryable<Patient>;
